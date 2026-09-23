@@ -1,32 +1,38 @@
 <div align="center">
 
-  <!-- Executive Cybernetic Animated Banner -->
-  <a href="https://github.com/mysterious03">
-    <img src="assets/matrix-banner.svg" width="100%" alt="Suriya Prakash - Executive Cyber Banner" />
+  <!-- Executive Cybernetic Animated Banner with Integrated Media Bar -->
+  <a href="https://linkedin.com/in/mysterious03">
+    <img src="assets/matrix-banner.svg" width="100%" alt="Suriya Prakash - Executive Cyber Architecture Banner" />
   </a>
+
+  <br/><br/>
+
+  <!-- Connected Media Dock / Quick Connect -->
+  <a href="https://linkedin.com/in/mysterious03" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect%20%E2%86%92-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  &nbsp;
+  <a href="https://github.com/mysterious03" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-Follow%20%E2%86%92-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  </a>
+  &nbsp;
+  <a href="mailto:contact@suriya.dev" target="_blank">
+    <img src="https://img.shields.io/badge/Email-Get%20in%20Touch%20%E2%86%92-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  &nbsp;
+  <a href="https://github.com/mysterious03/PIXEL" target="_blank">
+    <img src="https://img.shields.io/badge/%E2%9A%A1%20Featured-PIXEL%20ODVPA-00ff41?style=for-the-badge&logo=target&logoColor=black&labelColor=051508" alt="Featured Project" />
+  </a>
+  &nbsp;
+  <a href="https://komarev.com/ghpvc/?username=mysterious03&color=00ff41&style=for-the-badge&label=PROFILE+VIEWS">
+    <img src="https://komarev.com/ghpvc/?username=mysterious03&color=00ff41&style=for-the-badge&label=PROFILE+VIEWS" alt="Profile Views" />
+  </a>
+
+  <br/><br/>
 
   <!-- High-Impact Typing SVG Banner -->
   <a href="https://git.io/typing-svg">
     <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=1200&color=00FF41&center=true&vcenter=true&width=850&lines=Building+On-Device+Visual+Perception+Agents+(PIXEL+%2F%2F+SIH+%26+ISRO);Architecting+Dynamic+Spatial+Data+Structures+(Matrid);Connecting+Embedded+Sensors%2C+Edge+C%2B%2B+%26+Real-Time+Telemetry;Engineering+Fullstack+AI+Systems%2C+Spatial+Simulations+%26+Modern+UIs" alt="Typing SVG" />
-  </a>
-
-  <br /><br />
-
-  <!-- Live Status & Social Badges -->
-  <a href="https://github.com/mysterious03">
-    <img src="https://img.shields.io/badge/STATUS-ACTIVE%20BUILDER-00ff41?style=for-the-badge&logo=statuspage&logoColor=black&labelColor=051508" alt="Status Active" />
-  </a>
-  <a href="https://komarev.com/ghpvc/?username=mysterious03&color=00ff41&style=for-the-badge&label=PROFILE+VIEWS">
-    <img src="https://komarev.com/ghpvc/?username=mysterious03&color=00ff41&style=for-the-badge&label=PROFILE+VIEWS" alt="Profile Views" />
-  </a>
-  <a href="https://github.com/mysterious03" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-mysterious03-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
-  </a>
-  <a href="https://linkedin.com/in/mysterious03" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-Suriya%20Prakash-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  <a href="mailto:contact@suriya.dev" target="_blank">
-    <img src="https://img.shields.io/badge/Gmail-Email%20Me-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
 
 </div>
