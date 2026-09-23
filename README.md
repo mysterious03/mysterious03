@@ -1,14 +1,17 @@
 <div align="center">
 
-  <!-- Typing SVG Banner -->
+  <!-- Dynamic Matrix Animated Header Banner -->
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,45:002b00,100:00ff41&height=220&section=header&text=SURIYA%20PRAKASH&fontSize=52&fontAlignY=38&desc=AI%2FML%20%7C%20IoT%20Hardware%20Builder%20%7C%20Frontend%20Developer&descAlignY=58&descSize=18&fontColor=00ff41&descColor=7ee787" width="100%" alt="Suriya Prakash Matrix Banner" />
+
+  <!-- Matrix Typing SVG Banner -->
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=00F0FF&center=true&vcenter=true&width=650&lines=Hi+%F0%9F%90%8B+I'm+Suriya+Prakash;AI%2FML%2C+IoT+Hardware+%26+Frontend+Builder;Crafting+Smart+Sensors+%26+Sleek+UIs;Welcome+to+my+GitHub+Universe!%E2%9C%A8" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=24&pause=1000&color=00FF41&center=true&vcenter=true&width=650&lines=Hi+%F0%9F%90%8B+I'm+Suriya+Prakash;AI%2FML%2C+IoT+Hardware+%26+Frontend+Builder;Crafting+Smart+Sensors+%26+Sleek+UIs;Welcome+to+my+Matrix+Terminal!%E2%9A%A1" alt="Typing SVG" />
   </a>
 
   <br /><br />
 
   <!-- Visitor Counter -->
-  <img src="https://komarev.com/ghpvc/?username=mysterious03&color=00f0ff&style=for-the-badge&label=PROFILE+VIEWS" alt="Visitor Counter" />
+  <img src="https://komarev.com/ghpvc/?username=mysterious03&color=00ff41&style=for-the-badge&label=PROFILE+VIEWS" alt="Visitor Counter" />
 
   <br/><br/>
 
