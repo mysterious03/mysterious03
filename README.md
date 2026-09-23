@@ -2,7 +2,7 @@
 
   <!-- Dynamic Matrix Animated Digital Rain Banner -->
   <a href="https://github.com/mysterious03">
-    <img src="https://raw.githubusercontent.com/mysterious03/mysterious03/main/assets/matrix-banner.svg" width="100%" alt="Suriya Prakash Matrix Banner" />
+    <img src="assets/matrix-banner.svg" width="100%" alt="Suriya Prakash Matrix Banner" />
   </a>
 
   <!-- Matrix Typing SVG Banner -->
