@@ -1,338 +1,399 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 240" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" width="100%" height="100%">
   <defs>
-    <!-- Matrix Glow Filter -->
-    <filter id="matrixGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020803" />
+      <stop offset="50%" stop-color="#041206" />
+      <stop offset="100%" stop-color="#010502" />
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#051408" stop-opacity="0.94" />
+      <stop offset="100%" stop-color="#020904" stop-opacity="0.96" />
+    </linearGradient>
+
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="30%" stop-color="#7efa9a" />
+      <stop offset="100%" stop-color="#00ff41" />
+    </linearGradient>
+
+    <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ff41" stop-opacity="0" />
+      <stop offset="20%" stop-color="#00ff41" stop-opacity="0.8" />
+      <stop offset="80%" stop-color="#55ff88" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#00ff41" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="dropGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
       </feMerge>
     </filter>
 
-    <filter id="hudGlow" x="-20%" y="-20%" width="140%" height="140%">
-      <feGaussianBlur stdDeviation="4" result="blur" />
+    <filter id="textGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3.5" result="blur" />
       <feMerge>
         <feMergeNode in="blur" />
         <feMergeNode in="SourceGraphic" />
       </feMerge>
+    </filter>
+
+    <filter id="boxShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#00ff41" flood-opacity="0.15" />
     </filter>
 
     <style>
       @keyframes fall {
-        0% { transform: translateY(-260px); }
-        100% { transform: translateY(270px); }
+        0% { transform: translateY(-280px); }
+        100% { transform: translateY(300px); }
       }
-      @keyframes blink {
-        0%, 49% { opacity: 1; }
-        50%, 100% { opacity: 0; }
+      @keyframes pulse {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.4; transform: scale(0.92); }
       }
       @keyframes scan {
-        0% { transform: translateY(-10px); }
-        100% { transform: translateY(250px); }
+        0% { transform: translateY(-20px); }
+        100% { transform: translateY(290px); }
       }
-      @keyframes pulseBorder {
-        0%, 100% { stroke: #00ff41; stroke-opacity: 0.6; }
-        50% { stroke: #55ff88; stroke-opacity: 1; }
+      @keyframes borderGlow {
+        0%, 100% { stroke: #00ff41; stroke-opacity: 0.5; }
+        50% { stroke: #7efa9a; stroke-opacity: 0.9; }
       }
 
-      .c0 { animation: fall 4.32s linear infinite -3.12s; }
-      .c1 { animation: fall 3.0s linear infinite -2.68s; }
-      .c2 { animation: fall 4.32s linear infinite -1.78s; }
-      .c3 { animation: fall 3.63s linear infinite -1.46s; }
-      .c4 { animation: fall 3.19s linear infinite -0.94s; }
-      .c5 { animation: fall 3.98s linear infinite -4.27s; }
-      .c6 { animation: fall 3.01s linear infinite -1.99s; }
-      .c7 { animation: fall 4.39s linear infinite -0.75s; }
-      .c8 { animation: fall 2.86s linear infinite -0.13s; }
-      .c9 { animation: fall 2.81s linear infinite -3.54s; }
-      .c10 { animation: fall 3.64s linear infinite -0.89s; }
-      .c11 { animation: fall 3.68s linear infinite -3.12s; }
-      .c12 { animation: fall 3.63s linear infinite -3.26s; }
-      .c13 { animation: fall 3.57s linear infinite -2.75s; }
-      .c14 { animation: fall 2.89s linear infinite -2.29s; }
-      .c15 { animation: fall 3.74s linear infinite -4.31s; }
-      .c16 { animation: fall 3.89s linear infinite -4.41s; }
-      .c17 { animation: fall 3.93s linear infinite -4.39s; }
-      .c18 { animation: fall 2.65s linear infinite -1.42s; }
-      .c19 { animation: fall 4.26s linear infinite -2.56s; }
-      .c20 { animation: fall 3.03s linear infinite -1.89s; }
-      .c21 { animation: fall 2.46s linear infinite -1.57s; }
-      .c22 { animation: fall 3.05s linear infinite -1.05s; }
-      .c23 { animation: fall 3.63s linear infinite -2.71s; }
-      .c24 { animation: fall 3.4s linear infinite -0.86s; }
-      .c25 { animation: fall 3.94s linear infinite -4.03s; }
-      .c26 { animation: fall 3.81s linear infinite -4.03s; }
-      .c27 { animation: fall 3.61s linear infinite -2.55s; }
-      .c28 { animation: fall 3.98s linear infinite -1.15s; }
-      .c29 { animation: fall 4.09s linear infinite -2.76s; }
-      .c30 { animation: fall 2.4s linear infinite -0.32s; }
+      .c0 { animation: fall 4.74s linear infinite -1.89s; }
+      .c1 { animation: fall 2.51s linear infinite -4.6s; }
+      .c2 { animation: fall 3.13s linear infinite -0.1s; }
+      .c3 { animation: fall 3.22s linear infinite -4.3s; }
+      .c4 { animation: fall 3.89s linear infinite -0.66s; }
+      .c5 { animation: fall 3.91s linear infinite -0.09s; }
+      .c6 { animation: fall 4.29s linear infinite -2.85s; }
+      .c7 { animation: fall 4.29s linear infinite -0.2s; }
+      .c8 { animation: fall 3.58s linear infinite -3.53s; }
+      .c9 { animation: fall 4.8s linear infinite -3.7s; }
+      .c10 { animation: fall 3.29s linear infinite -0.42s; }
+      .c11 { animation: fall 4.61s linear infinite -2.6s; }
+      .c12 { animation: fall 2.87s linear infinite -0.42s; }
+      .c13 { animation: fall 3.12s linear infinite -1.89s; }
+      .c14 { animation: fall 3.73s linear infinite -1.4s; }
+      .c15 { animation: fall 3.54s linear infinite -4.2s; }
+      .c16 { animation: fall 4.52s linear infinite -3.12s; }
+      .c17 { animation: fall 4.86s linear infinite -4.87s; }
+      .c18 { animation: fall 2.93s linear infinite -2.04s; }
+      .c19 { animation: fall 2.59s linear infinite -1.76s; }
+      .c20 { animation: fall 3.71s linear infinite -1.61s; }
+      .c21 { animation: fall 4.15s linear infinite -4.07s; }
+      .c22 { animation: fall 3.74s linear infinite -1.1s; }
+      .c23 { animation: fall 4.54s linear infinite -0.76s; }
+      .c24 { animation: fall 4.62s linear infinite -4.09s; }
+      .c25 { animation: fall 2.77s linear infinite -1.42s; }
+      .c26 { animation: fall 2.74s linear infinite -2.82s; }
+      .c27 { animation: fall 3.77s linear infinite -3.62s; }
+      .c28 { animation: fall 4.91s linear infinite -4.71s; }
+      .c29 { animation: fall 4.45s linear infinite -1.96s; }
+      .c30 { animation: fall 3.44s linear infinite -2.49s; }
+      .c31 { animation: fall 4.24s linear infinite -3.55s; }
 
-      .cursor { animation: blink 1s infinite; }
-      .scanline { animation: scan 3.5s linear infinite; opacity: 0.08; }
-      .hud-border { animation: pulseBorder 3s infinite ease-in-out; }
+      .pulse-beacon { animation: pulse 2s infinite ease-in-out; transform-origin: center; }
+      .scan-beam { animation: scan 4s linear infinite; opacity: 0.07; }
+      .hud-border { animation: borderGlow 4s infinite ease-in-out; }
     </style>
   </defs>
 
-  <!-- Background Void -->
-  <rect width="900" height="240" fill="#020502" rx="12" />
+  <!-- Deep Obsidian Background -->
+  <rect width="1000" height="280" fill="url(#bgGrad)" rx="16" stroke="#003b00" stroke-width="1.2" />
 
-  <!-- Matrix Digital Code Rain -->
-  <g>
+  <!-- Matrix Digital Rain Ambient Layer (Subtle, Non-distracting, High-tech) -->
+  <g opacity="0.75">
     <g class="c0">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="4.32s" repeatCount="indefinite" begin="-3.12s" />
-      <text x="18" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="18" dy="0" fill="#003b00" opacity="0.35">=</tspan><tspan x="18" dy="15" fill="#003b00" opacity="0.35">0</tspan><tspan x="18" dy="15" fill="#003b00" opacity="0.35">C</tspan><tspan x="18" dy="15" fill="#003b00" opacity="0.35">ﾎ</tspan><tspan x="18" dy="15" fill="#003b00" opacity="0.35">2</tspan><tspan x="18" dy="15" fill="#003b00" opacity="0.35">3</tspan><tspan x="18" dy="15" fill="#008f11" opacity="0.6">D</tspan><tspan x="18" dy="15" fill="#008f11" opacity="0.6">ｼ</tspan><tspan x="18" dy="15" fill="#008f11" opacity="0.6">X</tspan><tspan x="18" dy="15" fill="#00ff41" opacity="0.85">&lt;</tspan><tspan x="18" dy="15" fill="#00ff41" opacity="0.85">ﾊ</tspan><tspan x="18" dy="15" fill="#00ff41" opacity="0.85">ﾏ</tspan><tspan x="18" dy="15" fill="#55ff88" opacity="0.95">7</tspan><tspan x="18" dy="15" fill="#55ff88" opacity="0.95">Y</tspan><tspan x="18" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">ﾎ</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="4.74s" repeatCount="indefinite" begin="-1.89s" />
+      <text x="20" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="20" dy="0" fill="#003b00" opacity="0.18">ﾈ</tspan><tspan x="20" dy="16" fill="#008f11" opacity="0.35">ﾘ</tspan><tspan x="20" dy="16" fill="#008f11" opacity="0.35">?</tspan><tspan x="20" dy="16" fill="#008f11" opacity="0.35">ﾘ</tspan><tspan x="20" dy="16" fill="#00ff41" opacity="0.55">8</tspan><tspan x="20" dy="16" fill="#00ff41" opacity="0.55">#</tspan><tspan x="20" dy="16" fill="#00ff41" opacity="0.55">?</tspan><tspan x="20" dy="16" fill="#66ff99" opacity="0.75">ｷ</tspan><tspan x="20" dy="16" fill="#66ff99" opacity="0.75">%</tspan><tspan x="20" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ﾀ</tspan>
       </text>
     </g>
     <g class="c1">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.0s" repeatCount="indefinite" begin="-2.68s" />
-      <text x="46" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="46" dy="0" fill="#003b00" opacity="0.35">ｿ</tspan><tspan x="46" dy="15" fill="#003b00" opacity="0.35">F</tspan><tspan x="46" dy="15" fill="#003b00" opacity="0.35">9</tspan><tspan x="46" dy="15" fill="#003b00" opacity="0.35">#</tspan><tspan x="46" dy="15" fill="#003b00" opacity="0.35">+</tspan><tspan x="46" dy="15" fill="#003b00" opacity="0.35">ﾎ</tspan><tspan x="46" dy="15" fill="#003b00" opacity="0.35">ｷ</tspan><tspan x="46" dy="15" fill="#008f11" opacity="0.6">ﾒ</tspan><tspan x="46" dy="15" fill="#008f11" opacity="0.6">&lt;</tspan><tspan x="46" dy="15" fill="#008f11" opacity="0.6">7</tspan><tspan x="46" dy="15" fill="#00ff41" opacity="0.85">ﾐ</tspan><tspan x="46" dy="15" fill="#00ff41" opacity="0.85">*</tspan><tspan x="46" dy="15" fill="#00ff41" opacity="0.85">ｵ</tspan><tspan x="46" dy="15" fill="#55ff88" opacity="0.95">ﾘ</tspan><tspan x="46" dy="15" fill="#55ff88" opacity="0.95">B</tspan><tspan x="46" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">9</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="2.51s" repeatCount="indefinite" begin="-4.6s" />
+      <text x="50" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="50" dy="0" fill="#003b00" opacity="0.18">Y</tspan><tspan x="50" dy="16" fill="#003b00" opacity="0.18">2</tspan><tspan x="50" dy="16" fill="#003b00" opacity="0.18">1</tspan><tspan x="50" dy="16" fill="#003b00" opacity="0.18">&gt;</tspan><tspan x="50" dy="16" fill="#008f11" opacity="0.35">D</tspan><tspan x="50" dy="16" fill="#008f11" opacity="0.35">X</tspan><tspan x="50" dy="16" fill="#008f11" opacity="0.35">X</tspan><tspan x="50" dy="16" fill="#00ff41" opacity="0.55">ﾗ</tspan><tspan x="50" dy="16" fill="#00ff41" opacity="0.55">F</tspan><tspan x="50" dy="16" fill="#00ff41" opacity="0.55">X</tspan><tspan x="50" dy="16" fill="#66ff99" opacity="0.75">3</tspan><tspan x="50" dy="16" fill="#66ff99" opacity="0.75">ﾓ</tspan><tspan x="50" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ﾂ</tspan>
       </text>
     </g>
     <g class="c2">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="4.32s" repeatCount="indefinite" begin="-1.78s" />
-      <text x="74" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="74" dy="0" fill="#003b00" opacity="0.35">E</tspan><tspan x="74" dy="15" fill="#003b00" opacity="0.35">Z</tspan><tspan x="74" dy="15" fill="#003b00" opacity="0.35">ﾇ</tspan><tspan x="74" dy="15" fill="#003b00" opacity="0.35">9</tspan><tspan x="74" dy="15" fill="#003b00" opacity="0.35">ｱ</tspan><tspan x="74" dy="15" fill="#003b00" opacity="0.35">&gt;</tspan><tspan x="74" dy="15" fill="#003b00" opacity="0.35">ﾋ</tspan><tspan x="74" dy="15" fill="#003b00" opacity="0.35">4</tspan><tspan x="74" dy="15" fill="#008f11" opacity="0.6">ｹ</tspan><tspan x="74" dy="15" fill="#008f11" opacity="0.6">ﾔ</tspan><tspan x="74" dy="15" fill="#008f11" opacity="0.6">ﾂ</tspan><tspan x="74" dy="15" fill="#00ff41" opacity="0.85">ｼ</tspan><tspan x="74" dy="15" fill="#00ff41" opacity="0.85">Y</tspan><tspan x="74" dy="15" fill="#00ff41" opacity="0.85">/</tspan><tspan x="74" dy="15" fill="#55ff88" opacity="0.95">ﾈ</tspan><tspan x="74" dy="15" fill="#55ff88" opacity="0.95">A</tspan><tspan x="74" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">B</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="3.13s" repeatCount="indefinite" begin="-0.1s" />
+      <text x="80" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="80" dy="0" fill="#003b00" opacity="0.18">&lt;</tspan><tspan x="80" dy="16" fill="#003b00" opacity="0.18">ｷ</tspan><tspan x="80" dy="16" fill="#003b00" opacity="0.18">ﾓ</tspan><tspan x="80" dy="16" fill="#008f11" opacity="0.35">ｦ</tspan><tspan x="80" dy="16" fill="#008f11" opacity="0.35">&lt;</tspan><tspan x="80" dy="16" fill="#008f11" opacity="0.35">*</tspan><tspan x="80" dy="16" fill="#00ff41" opacity="0.55">A</tspan><tspan x="80" dy="16" fill="#00ff41" opacity="0.55">ﾗ</tspan><tspan x="80" dy="16" fill="#00ff41" opacity="0.55">A</tspan><tspan x="80" dy="16" fill="#66ff99" opacity="0.75">ﾈ</tspan><tspan x="80" dy="16" fill="#66ff99" opacity="0.75">ｿ</tspan><tspan x="80" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ﾐ</tspan>
       </text>
     </g>
     <g class="c3">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.63s" repeatCount="indefinite" begin="-1.46s" />
-      <text x="102" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="102" dy="0" fill="#003b00" opacity="0.35">ﾃ</tspan><tspan x="102" dy="15" fill="#003b00" opacity="0.35">Z</tspan><tspan x="102" dy="15" fill="#003b00" opacity="0.35">ｾ</tspan><tspan x="102" dy="15" fill="#003b00" opacity="0.35">1</tspan><tspan x="102" dy="15" fill="#003b00" opacity="0.35">ｵ</tspan><tspan x="102" dy="15" fill="#003b00" opacity="0.35">7</tspan><tspan x="102" dy="15" fill="#008f11" opacity="0.6">ﾜ</tspan><tspan x="102" dy="15" fill="#008f11" opacity="0.6">5</tspan><tspan x="102" dy="15" fill="#008f11" opacity="0.6">2</tspan><tspan x="102" dy="15" fill="#00ff41" opacity="0.85">X</tspan><tspan x="102" dy="15" fill="#00ff41" opacity="0.85">ｳ</tspan><tspan x="102" dy="15" fill="#00ff41" opacity="0.85">ｵ</tspan><tspan x="102" dy="15" fill="#55ff88" opacity="0.95">ﾑ</tspan><tspan x="102" dy="15" fill="#55ff88" opacity="0.95">8</tspan><tspan x="102" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">*</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="3.22s" repeatCount="indefinite" begin="-4.3s" />
+      <text x="110" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="110" dy="0" fill="#003b00" opacity="0.18">Z</tspan><tspan x="110" dy="16" fill="#003b00" opacity="0.18">ﾏ</tspan><tspan x="110" dy="16" fill="#003b00" opacity="0.18">E</tspan><tspan x="110" dy="16" fill="#008f11" opacity="0.35">ﾘ</tspan><tspan x="110" dy="16" fill="#008f11" opacity="0.35">7</tspan><tspan x="110" dy="16" fill="#008f11" opacity="0.35">ｵ</tspan><tspan x="110" dy="16" fill="#00ff41" opacity="0.55">D</tspan><tspan x="110" dy="16" fill="#00ff41" opacity="0.55">ﾊ</tspan><tspan x="110" dy="16" fill="#00ff41" opacity="0.55">ｶ</tspan><tspan x="110" dy="16" fill="#66ff99" opacity="0.75">1</tspan><tspan x="110" dy="16" fill="#66ff99" opacity="0.75">0</tspan><tspan x="110" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ﾆ</tspan>
       </text>
     </g>
     <g class="c4">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.19s" repeatCount="indefinite" begin="-0.94s" />
-      <text x="130" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="130" dy="0" fill="#003b00" opacity="0.35">ｾ</tspan><tspan x="130" dy="15" fill="#003b00" opacity="0.35">ｾ</tspan><tspan x="130" dy="15" fill="#003b00" opacity="0.35">ｷ</tspan><tspan x="130" dy="15" fill="#003b00" opacity="0.35">ﾆ</tspan><tspan x="130" dy="15" fill="#003b00" opacity="0.35">ｾ</tspan><tspan x="130" dy="15" fill="#003b00" opacity="0.35">ﾓ</tspan><tspan x="130" dy="15" fill="#003b00" opacity="0.35">E</tspan><tspan x="130" dy="15" fill="#008f11" opacity="0.6">+</tspan><tspan x="130" dy="15" fill="#008f11" opacity="0.6">Z</tspan><tspan x="130" dy="15" fill="#008f11" opacity="0.6">2</tspan><tspan x="130" dy="15" fill="#00ff41" opacity="0.85">ﾈ</tspan><tspan x="130" dy="15" fill="#00ff41" opacity="0.85">ｦ</tspan><tspan x="130" dy="15" fill="#00ff41" opacity="0.85">Y</tspan><tspan x="130" dy="15" fill="#55ff88" opacity="0.95">=</tspan><tspan x="130" dy="15" fill="#55ff88" opacity="0.95">5</tspan><tspan x="130" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">ﾊ</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="3.89s" repeatCount="indefinite" begin="-0.66s" />
+      <text x="140" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="140" dy="0" fill="#003b00" opacity="0.18">C</tspan><tspan x="140" dy="16" fill="#003b00" opacity="0.18">C</tspan><tspan x="140" dy="16" fill="#003b00" opacity="0.18">2</tspan><tspan x="140" dy="16" fill="#003b00" opacity="0.18">ﾇ</tspan><tspan x="140" dy="16" fill="#003b00" opacity="0.18">ｱ</tspan><tspan x="140" dy="16" fill="#003b00" opacity="0.18">/</tspan><tspan x="140" dy="16" fill="#008f11" opacity="0.35">C</tspan><tspan x="140" dy="16" fill="#008f11" opacity="0.35">ﾎ</tspan><tspan x="140" dy="16" fill="#008f11" opacity="0.35">ﾎ</tspan><tspan x="140" dy="16" fill="#00ff41" opacity="0.55">ﾔ</tspan><tspan x="140" dy="16" fill="#00ff41" opacity="0.55">ﾒ</tspan><tspan x="140" dy="16" fill="#00ff41" opacity="0.55">ｶ</tspan><tspan x="140" dy="16" fill="#66ff99" opacity="0.75">ﾐ</tspan><tspan x="140" dy="16" fill="#66ff99" opacity="0.75">*</tspan><tspan x="140" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">3</tspan>
       </text>
     </g>
     <g class="c5">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.98s" repeatCount="indefinite" begin="-4.27s" />
-      <text x="158" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="158" dy="0" fill="#003b00" opacity="0.35">ｳ</tspan><tspan x="158" dy="15" fill="#003b00" opacity="0.35">X</tspan><tspan x="158" dy="15" fill="#003b00" opacity="0.35">1</tspan><tspan x="158" dy="15" fill="#003b00" opacity="0.35">D</tspan><tspan x="158" dy="15" fill="#003b00" opacity="0.35">8</tspan><tspan x="158" dy="15" fill="#003b00" opacity="0.35">ﾇ</tspan><tspan x="158" dy="15" fill="#008f11" opacity="0.6">/</tspan><tspan x="158" dy="15" fill="#008f11" opacity="0.6">*</tspan><tspan x="158" dy="15" fill="#008f11" opacity="0.6">ｿ</tspan><tspan x="158" dy="15" fill="#00ff41" opacity="0.85">5</tspan><tspan x="158" dy="15" fill="#00ff41" opacity="0.85">ｽ</tspan><tspan x="158" dy="15" fill="#00ff41" opacity="0.85">ﾜ</tspan><tspan x="158" dy="15" fill="#55ff88" opacity="0.95">ﾜ</tspan><tspan x="158" dy="15" fill="#55ff88" opacity="0.95">ﾜ</tspan><tspan x="158" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">ｽ</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="3.91s" repeatCount="indefinite" begin="-0.09s" />
+      <text x="170" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="170" dy="0" fill="#003b00" opacity="0.18">ﾘ</tspan><tspan x="170" dy="16" fill="#003b00" opacity="0.18">Z</tspan><tspan x="170" dy="16" fill="#003b00" opacity="0.18">F</tspan><tspan x="170" dy="16" fill="#003b00" opacity="0.18">#</tspan><tspan x="170" dy="16" fill="#008f11" opacity="0.35">4</tspan><tspan x="170" dy="16" fill="#008f11" opacity="0.35">%</tspan><tspan x="170" dy="16" fill="#008f11" opacity="0.35">ﾗ</tspan><tspan x="170" dy="16" fill="#00ff41" opacity="0.55">ﾐ</tspan><tspan x="170" dy="16" fill="#00ff41" opacity="0.55">+</tspan><tspan x="170" dy="16" fill="#00ff41" opacity="0.55">ﾜ</tspan><tspan x="170" dy="16" fill="#66ff99" opacity="0.75">ﾃ</tspan><tspan x="170" dy="16" fill="#66ff99" opacity="0.75">/</tspan><tspan x="170" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ﾑ</tspan>
       </text>
     </g>
     <g class="c6">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.01s" repeatCount="indefinite" begin="-1.99s" />
-      <text x="186" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="186" dy="0" fill="#003b00" opacity="0.35">C</tspan><tspan x="186" dy="15" fill="#003b00" opacity="0.35">E</tspan><tspan x="186" dy="15" fill="#003b00" opacity="0.35">3</tspan><tspan x="186" dy="15" fill="#003b00" opacity="0.35">ﾔ</tspan><tspan x="186" dy="15" fill="#003b00" opacity="0.35">*</tspan><tspan x="186" dy="15" fill="#008f11" opacity="0.6">ｱ</tspan><tspan x="186" dy="15" fill="#008f11" opacity="0.6">Z</tspan><tspan x="186" dy="15" fill="#008f11" opacity="0.6">ﾜ</tspan><tspan x="186" dy="15" fill="#00ff41" opacity="0.85">ﾗ</tspan><tspan x="186" dy="15" fill="#00ff41" opacity="0.85">0</tspan><tspan x="186" dy="15" fill="#00ff41" opacity="0.85">F</tspan><tspan x="186" dy="15" fill="#55ff88" opacity="0.95">8</tspan><tspan x="186" dy="15" fill="#55ff88" opacity="0.95">D</tspan><tspan x="186" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">=</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="4.29s" repeatCount="indefinite" begin="-2.85s" />
+      <text x="200" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="200" dy="0" fill="#003b00" opacity="0.18">ﾜ</tspan><tspan x="200" dy="16" fill="#003b00" opacity="0.18">Z</tspan><tspan x="200" dy="16" fill="#003b00" opacity="0.18">ｱ</tspan><tspan x="200" dy="16" fill="#003b00" opacity="0.18">2</tspan><tspan x="200" dy="16" fill="#003b00" opacity="0.18">ﾀ</tspan><tspan x="200" dy="16" fill="#008f11" opacity="0.35">X</tspan><tspan x="200" dy="16" fill="#008f11" opacity="0.35">ｺ</tspan><tspan x="200" dy="16" fill="#008f11" opacity="0.35">&lt;</tspan><tspan x="200" dy="16" fill="#00ff41" opacity="0.55">ｴ</tspan><tspan x="200" dy="16" fill="#00ff41" opacity="0.55">C</tspan><tspan x="200" dy="16" fill="#00ff41" opacity="0.55">ﾜ</tspan><tspan x="200" dy="16" fill="#66ff99" opacity="0.75">%</tspan><tspan x="200" dy="16" fill="#66ff99" opacity="0.75">9</tspan><tspan x="200" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ｷ</tspan>
       </text>
     </g>
     <g class="c7">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="4.39s" repeatCount="indefinite" begin="-0.75s" />
-      <text x="214" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="214" dy="0" fill="#003b00" opacity="0.35">8</tspan><tspan x="214" dy="15" fill="#003b00" opacity="0.35">ﾃ</tspan><tspan x="214" dy="15" fill="#003b00" opacity="0.35">ﾃ</tspan><tspan x="214" dy="15" fill="#003b00" opacity="0.35">ｵ</tspan><tspan x="214" dy="15" fill="#003b00" opacity="0.35">C</tspan><tspan x="214" dy="15" fill="#003b00" opacity="0.35">ｺ</tspan><tspan x="214" dy="15" fill="#008f11" opacity="0.6">?</tspan><tspan x="214" dy="15" fill="#008f11" opacity="0.6">ｴ</tspan><tspan x="214" dy="15" fill="#008f11" opacity="0.6">*</tspan><tspan x="214" dy="15" fill="#00ff41" opacity="0.85">ｼ</tspan><tspan x="214" dy="15" fill="#00ff41" opacity="0.85">ﾈ</tspan><tspan x="214" dy="15" fill="#00ff41" opacity="0.85">&lt;</tspan><tspan x="214" dy="15" fill="#55ff88" opacity="0.95">ｶ</tspan><tspan x="214" dy="15" fill="#55ff88" opacity="0.95">ｾ</tspan><tspan x="214" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">ﾓ</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="4.29s" repeatCount="indefinite" begin="-0.2s" />
+      <text x="230" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="230" dy="0" fill="#003b00" opacity="0.18">ﾕ</tspan><tspan x="230" dy="16" fill="#003b00" opacity="0.18">%</tspan><tspan x="230" dy="16" fill="#008f11" opacity="0.35">ﾀ</tspan><tspan x="230" dy="16" fill="#008f11" opacity="0.35">/</tspan><tspan x="230" dy="16" fill="#008f11" opacity="0.35">%</tspan><tspan x="230" dy="16" fill="#00ff41" opacity="0.55">ｹ</tspan><tspan x="230" dy="16" fill="#00ff41" opacity="0.55">7</tspan><tspan x="230" dy="16" fill="#00ff41" opacity="0.55">B</tspan><tspan x="230" dy="16" fill="#66ff99" opacity="0.75">ﾔ</tspan><tspan x="230" dy="16" fill="#66ff99" opacity="0.75">A</tspan><tspan x="230" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ﾕ</tspan>
       </text>
     </g>
     <g class="c8">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="2.86s" repeatCount="indefinite" begin="-0.13s" />
-      <text x="242" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="242" dy="0" fill="#003b00" opacity="0.35">1</tspan><tspan x="242" dy="15" fill="#003b00" opacity="0.35">ｻ</tspan><tspan x="242" dy="15" fill="#008f11" opacity="0.6">ﾒ</tspan><tspan x="242" dy="15" fill="#008f11" opacity="0.6">ﾋ</tspan><tspan x="242" dy="15" fill="#008f11" opacity="0.6">4</tspan><tspan x="242" dy="15" fill="#00ff41" opacity="0.85">C</tspan><tspan x="242" dy="15" fill="#00ff41" opacity="0.85">%</tspan><tspan x="242" dy="15" fill="#00ff41" opacity="0.85">+</tspan><tspan x="242" dy="15" fill="#55ff88" opacity="0.95">=</tspan><tspan x="242" dy="15" fill="#55ff88" opacity="0.95">ｳ</tspan><tspan x="242" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">ﾒ</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="3.58s" repeatCount="indefinite" begin="-3.53s" />
+      <text x="260" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="260" dy="0" fill="#003b00" opacity="0.18">ﾃ</tspan><tspan x="260" dy="16" fill="#003b00" opacity="0.18">1</tspan><tspan x="260" dy="16" fill="#003b00" opacity="0.18">ﾐ</tspan><tspan x="260" dy="16" fill="#003b00" opacity="0.18">9</tspan><tspan x="260" dy="16" fill="#003b00" opacity="0.18">ﾇ</tspan><tspan x="260" dy="16" fill="#008f11" opacity="0.35">1</tspan><tspan x="260" dy="16" fill="#008f11" opacity="0.35">Z</tspan><tspan x="260" dy="16" fill="#008f11" opacity="0.35">8</tspan><tspan x="260" dy="16" fill="#00ff41" opacity="0.55">ﾘ</tspan><tspan x="260" dy="16" fill="#00ff41" opacity="0.55">B</tspan><tspan x="260" dy="16" fill="#00ff41" opacity="0.55">ﾕ</tspan><tspan x="260" dy="16" fill="#66ff99" opacity="0.75">Z</tspan><tspan x="260" dy="16" fill="#66ff99" opacity="0.75">%</tspan><tspan x="260" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ﾐ</tspan>
       </text>
     </g>
     <g class="c9">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="2.81s" repeatCount="indefinite" begin="-3.54s" />
-      <text x="270" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="270" dy="0" fill="#003b00" opacity="0.35">7</tspan><tspan x="270" dy="15" fill="#003b00" opacity="0.35">ﾔ</tspan><tspan x="270" dy="15" fill="#008f11" opacity="0.6">ﾋ</tspan><tspan x="270" dy="15" fill="#008f11" opacity="0.6">ﾏ</tspan><tspan x="270" dy="15" fill="#008f11" opacity="0.6">ｵ</tspan><tspan x="270" dy="15" fill="#00ff41" opacity="0.85">ｿ</tspan><tspan x="270" dy="15" fill="#00ff41" opacity="0.85">ﾋ</tspan><tspan x="270" dy="15" fill="#00ff41" opacity="0.85">9</tspan><tspan x="270" dy="15" fill="#55ff88" opacity="0.95">A</tspan><tspan x="270" dy="15" fill="#55ff88" opacity="0.95">8</tspan><tspan x="270" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">4</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="4.8s" repeatCount="indefinite" begin="-3.7s" />
+      <text x="290" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="290" dy="0" fill="#003b00" opacity="0.18">ｦ</tspan><tspan x="290" dy="16" fill="#003b00" opacity="0.18">ｳ</tspan><tspan x="290" dy="16" fill="#003b00" opacity="0.18">ｻ</tspan><tspan x="290" dy="16" fill="#008f11" opacity="0.35">8</tspan><tspan x="290" dy="16" fill="#008f11" opacity="0.35">%</tspan><tspan x="290" dy="16" fill="#008f11" opacity="0.35">4</tspan><tspan x="290" dy="16" fill="#00ff41" opacity="0.55">ﾔ</tspan><tspan x="290" dy="16" fill="#00ff41" opacity="0.55">Z</tspan><tspan x="290" dy="16" fill="#00ff41" opacity="0.55">ﾜ</tspan><tspan x="290" dy="16" fill="#66ff99" opacity="0.75">=</tspan><tspan x="290" dy="16" fill="#66ff99" opacity="0.75">ﾗ</tspan><tspan x="290" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ﾎ</tspan>
       </text>
     </g>
     <g class="c10">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.64s" repeatCount="indefinite" begin="-0.89s" />
-      <text x="298" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="298" dy="0" fill="#003b00" opacity="0.35">ﾕ</tspan><tspan x="298" dy="15" fill="#003b00" opacity="0.35">ﾐ</tspan><tspan x="298" dy="15" fill="#003b00" opacity="0.35">5</tspan><tspan x="298" dy="15" fill="#008f11" opacity="0.6">ﾒ</tspan><tspan x="298" dy="15" fill="#008f11" opacity="0.6">1</tspan><tspan x="298" dy="15" fill="#008f11" opacity="0.6">ﾃ</tspan><tspan x="298" dy="15" fill="#00ff41" opacity="0.85">ｼ</tspan><tspan x="298" dy="15" fill="#00ff41" opacity="0.85">ﾀ</tspan><tspan x="298" dy="15" fill="#00ff41" opacity="0.85">C</tspan><tspan x="298" dy="15" fill="#55ff88" opacity="0.95">&gt;</tspan><tspan x="298" dy="15" fill="#55ff88" opacity="0.95">ﾊ</tspan><tspan x="298" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">ﾐ</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="3.29s" repeatCount="indefinite" begin="-0.42s" />
+      <text x="320" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="320" dy="0" fill="#003b00" opacity="0.18">ﾔ</tspan><tspan x="320" dy="16" fill="#003b00" opacity="0.18">ﾘ</tspan><tspan x="320" dy="16" fill="#003b00" opacity="0.18">X</tspan><tspan x="320" dy="16" fill="#003b00" opacity="0.18">&lt;</tspan><tspan x="320" dy="16" fill="#008f11" opacity="0.35">ﾗ</tspan><tspan x="320" dy="16" fill="#008f11" opacity="0.35">Z</tspan><tspan x="320" dy="16" fill="#008f11" opacity="0.35">ﾒ</tspan><tspan x="320" dy="16" fill="#00ff41" opacity="0.55">1</tspan><tspan x="320" dy="16" fill="#00ff41" opacity="0.55">9</tspan><tspan x="320" dy="16" fill="#00ff41" opacity="0.55">+</tspan><tspan x="320" dy="16" fill="#66ff99" opacity="0.75">ｳ</tspan><tspan x="320" dy="16" fill="#66ff99" opacity="0.75">&gt;</tspan><tspan x="320" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ﾆ</tspan>
       </text>
     </g>
     <g class="c11">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.68s" repeatCount="indefinite" begin="-3.12s" />
-      <text x="326" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="326" dy="0" fill="#003b00" opacity="0.35">=</tspan><tspan x="326" dy="15" fill="#003b00" opacity="0.35">ﾑ</tspan><tspan x="326" dy="15" fill="#003b00" opacity="0.35">=</tspan><tspan x="326" dy="15" fill="#003b00" opacity="0.35">ｼ</tspan><tspan x="326" dy="15" fill="#003b00" opacity="0.35">C</tspan><tspan x="326" dy="15" fill="#003b00" opacity="0.35">ﾕ</tspan><tspan x="326" dy="15" fill="#008f11" opacity="0.6">5</tspan><tspan x="326" dy="15" fill="#008f11" opacity="0.6">B</tspan><tspan x="326" dy="15" fill="#008f11" opacity="0.6">7</tspan><tspan x="326" dy="15" fill="#00ff41" opacity="0.85">ﾈ</tspan><tspan x="326" dy="15" fill="#00ff41" opacity="0.85">ｳ</tspan><tspan x="326" dy="15" fill="#00ff41" opacity="0.85">ｱ</tspan><tspan x="326" dy="15" fill="#55ff88" opacity="0.95">0</tspan><tspan x="326" dy="15" fill="#55ff88" opacity="0.95">4</tspan><tspan x="326" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">ｾ</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="4.61s" repeatCount="indefinite" begin="-2.6s" />
+      <text x="350" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="350" dy="0" fill="#003b00" opacity="0.18">ﾓ</tspan><tspan x="350" dy="16" fill="#008f11" opacity="0.35">B</tspan><tspan x="350" dy="16" fill="#008f11" opacity="0.35">C</tspan><tspan x="350" dy="16" fill="#008f11" opacity="0.35">Y</tspan><tspan x="350" dy="16" fill="#00ff41" opacity="0.55">ﾘ</tspan><tspan x="350" dy="16" fill="#00ff41" opacity="0.55">ﾃ</tspan><tspan x="350" dy="16" fill="#00ff41" opacity="0.55">ﾓ</tspan><tspan x="350" dy="16" fill="#66ff99" opacity="0.75">=</tspan><tspan x="350" dy="16" fill="#66ff99" opacity="0.75">ｽ</tspan><tspan x="350" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ﾒ</tspan>
       </text>
     </g>
     <g class="c12">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.63s" repeatCount="indefinite" begin="-3.26s" />
-      <text x="354" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="354" dy="0" fill="#003b00" opacity="0.35">ﾈ</tspan><tspan x="354" dy="15" fill="#003b00" opacity="0.35">X</tspan><tspan x="354" dy="15" fill="#003b00" opacity="0.35">ﾐ</tspan><tspan x="354" dy="15" fill="#003b00" opacity="0.35">#</tspan><tspan x="354" dy="15" fill="#003b00" opacity="0.35">ﾋ</tspan><tspan x="354" dy="15" fill="#003b00" opacity="0.35">ﾀ</tspan><tspan x="354" dy="15" fill="#008f11" opacity="0.6">+</tspan><tspan x="354" dy="15" fill="#008f11" opacity="0.6">ﾇ</tspan><tspan x="354" dy="15" fill="#008f11" opacity="0.6">*</tspan><tspan x="354" dy="15" fill="#00ff41" opacity="0.85">ﾓ</tspan><tspan x="354" dy="15" fill="#00ff41" opacity="0.85">3</tspan><tspan x="354" dy="15" fill="#00ff41" opacity="0.85">ﾏ</tspan><tspan x="354" dy="15" fill="#55ff88" opacity="0.95">7</tspan><tspan x="354" dy="15" fill="#55ff88" opacity="0.95">ﾏ</tspan><tspan x="354" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">ｻ</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="2.87s" repeatCount="indefinite" begin="-0.42s" />
+      <text x="380" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="380" dy="0" fill="#003b00" opacity="0.18">8</tspan><tspan x="380" dy="16" fill="#008f11" opacity="0.35">ﾅ</tspan><tspan x="380" dy="16" fill="#008f11" opacity="0.35">*</tspan><tspan x="380" dy="16" fill="#008f11" opacity="0.35">ﾗ</tspan><tspan x="380" dy="16" fill="#00ff41" opacity="0.55">ﾎ</tspan><tspan x="380" dy="16" fill="#00ff41" opacity="0.55">ｷ</tspan><tspan x="380" dy="16" fill="#00ff41" opacity="0.55">ｾ</tspan><tspan x="380" dy="16" fill="#66ff99" opacity="0.75">E</tspan><tspan x="380" dy="16" fill="#66ff99" opacity="0.75">/</tspan><tspan x="380" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ﾑ</tspan>
       </text>
     </g>
     <g class="c13">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.57s" repeatCount="indefinite" begin="-2.75s" />
-      <text x="382" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="382" dy="0" fill="#003b00" opacity="0.35">ﾂ</tspan><tspan x="382" dy="15" fill="#003b00" opacity="0.35">ﾏ</tspan><tspan x="382" dy="15" fill="#003b00" opacity="0.35">&lt;</tspan><tspan x="382" dy="15" fill="#003b00" opacity="0.35">C</tspan><tspan x="382" dy="15" fill="#003b00" opacity="0.35">ｶ</tspan><tspan x="382" dy="15" fill="#003b00" opacity="0.35">ﾔ</tspan><tspan x="382" dy="15" fill="#003b00" opacity="0.35">B</tspan><tspan x="382" dy="15" fill="#008f11" opacity="0.6">ｦ</tspan><tspan x="382" dy="15" fill="#008f11" opacity="0.6">ﾊ</tspan><tspan x="382" dy="15" fill="#008f11" opacity="0.6">ｶ</tspan><tspan x="382" dy="15" fill="#00ff41" opacity="0.85">&gt;</tspan><tspan x="382" dy="15" fill="#00ff41" opacity="0.85">=</tspan><tspan x="382" dy="15" fill="#00ff41" opacity="0.85">ﾅ</tspan><tspan x="382" dy="15" fill="#55ff88" opacity="0.95">ﾗ</tspan><tspan x="382" dy="15" fill="#55ff88" opacity="0.95">ﾜ</tspan><tspan x="382" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">&lt;</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="3.12s" repeatCount="indefinite" begin="-1.89s" />
+      <text x="410" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="410" dy="0" fill="#003b00" opacity="0.18">ｦ</tspan><tspan x="410" dy="16" fill="#008f11" opacity="0.35">ﾓ</tspan><tspan x="410" dy="16" fill="#008f11" opacity="0.35">3</tspan><tspan x="410" dy="16" fill="#008f11" opacity="0.35">0</tspan><tspan x="410" dy="16" fill="#00ff41" opacity="0.55">=</tspan><tspan x="410" dy="16" fill="#00ff41" opacity="0.55">&gt;</tspan><tspan x="410" dy="16" fill="#00ff41" opacity="0.55">ｶ</tspan><tspan x="410" dy="16" fill="#66ff99" opacity="0.75">5</tspan><tspan x="410" dy="16" fill="#66ff99" opacity="0.75">Y</tspan><tspan x="410" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ｾ</tspan>
       </text>
     </g>
     <g class="c14">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="2.89s" repeatCount="indefinite" begin="-2.29s" />
-      <text x="410" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="410" dy="0" fill="#003b00" opacity="0.35">ｳ</tspan><tspan x="410" dy="15" fill="#003b00" opacity="0.35">/</tspan><tspan x="410" dy="15" fill="#003b00" opacity="0.35">?</tspan><tspan x="410" dy="15" fill="#008f11" opacity="0.6">ﾘ</tspan><tspan x="410" dy="15" fill="#008f11" opacity="0.6">3</tspan><tspan x="410" dy="15" fill="#008f11" opacity="0.6">ﾏ</tspan><tspan x="410" dy="15" fill="#00ff41" opacity="0.85">ｾ</tspan><tspan x="410" dy="15" fill="#00ff41" opacity="0.85">7</tspan><tspan x="410" dy="15" fill="#00ff41" opacity="0.85">ﾓ</tspan><tspan x="410" dy="15" fill="#55ff88" opacity="0.95">ｹ</tspan><tspan x="410" dy="15" fill="#55ff88" opacity="0.95">9</tspan><tspan x="410" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">ﾂ</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="3.73s" repeatCount="indefinite" begin="-1.4s" />
+      <text x="440" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="440" dy="0" fill="#003b00" opacity="0.18">0</tspan><tspan x="440" dy="16" fill="#003b00" opacity="0.18">ﾅ</tspan><tspan x="440" dy="16" fill="#003b00" opacity="0.18">9</tspan><tspan x="440" dy="16" fill="#003b00" opacity="0.18">F</tspan><tspan x="440" dy="16" fill="#003b00" opacity="0.18">7</tspan><tspan x="440" dy="16" fill="#003b00" opacity="0.18">ﾋ</tspan><tspan x="440" dy="16" fill="#003b00" opacity="0.18">ｻ</tspan><tspan x="440" dy="16" fill="#008f11" opacity="0.35">ｦ</tspan><tspan x="440" dy="16" fill="#008f11" opacity="0.35">ﾈ</tspan><tspan x="440" dy="16" fill="#008f11" opacity="0.35">9</tspan><tspan x="440" dy="16" fill="#00ff41" opacity="0.55">3</tspan><tspan x="440" dy="16" fill="#00ff41" opacity="0.55">2</tspan><tspan x="440" dy="16" fill="#00ff41" opacity="0.55">X</tspan><tspan x="440" dy="16" fill="#66ff99" opacity="0.75">=</tspan><tspan x="440" dy="16" fill="#66ff99" opacity="0.75">?</tspan><tspan x="440" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">#</tspan>
       </text>
     </g>
     <g class="c15">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.74s" repeatCount="indefinite" begin="-4.31s" />
-      <text x="438" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="438" dy="0" fill="#003b00" opacity="0.35">ｿ</tspan><tspan x="438" dy="15" fill="#003b00" opacity="0.35">ﾋ</tspan><tspan x="438" dy="15" fill="#003b00" opacity="0.35">0</tspan><tspan x="438" dy="15" fill="#003b00" opacity="0.35">ﾊ</tspan><tspan x="438" dy="15" fill="#003b00" opacity="0.35">=</tspan><tspan x="438" dy="15" fill="#003b00" opacity="0.35">ﾅ</tspan><tspan x="438" dy="15" fill="#003b00" opacity="0.35">3</tspan><tspan x="438" dy="15" fill="#008f11" opacity="0.6">ｷ</tspan><tspan x="438" dy="15" fill="#008f11" opacity="0.6">A</tspan><tspan x="438" dy="15" fill="#008f11" opacity="0.6">/</tspan><tspan x="438" dy="15" fill="#00ff41" opacity="0.85">A</tspan><tspan x="438" dy="15" fill="#00ff41" opacity="0.85">?</tspan><tspan x="438" dy="15" fill="#00ff41" opacity="0.85">ｻ</tspan><tspan x="438" dy="15" fill="#55ff88" opacity="0.95">ﾘ</tspan><tspan x="438" dy="15" fill="#55ff88" opacity="0.95">X</tspan><tspan x="438" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">3</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="3.54s" repeatCount="indefinite" begin="-4.2s" />
+      <text x="470" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="470" dy="0" fill="#003b00" opacity="0.18">0</tspan><tspan x="470" dy="16" fill="#003b00" opacity="0.18">ﾀ</tspan><tspan x="470" dy="16" fill="#008f11" opacity="0.35">ﾕ</tspan><tspan x="470" dy="16" fill="#008f11" opacity="0.35">3</tspan><tspan x="470" dy="16" fill="#008f11" opacity="0.35">ｺ</tspan><tspan x="470" dy="16" fill="#00ff41" opacity="0.55">4</tspan><tspan x="470" dy="16" fill="#00ff41" opacity="0.55">%</tspan><tspan x="470" dy="16" fill="#00ff41" opacity="0.55">B</tspan><tspan x="470" dy="16" fill="#66ff99" opacity="0.75">ﾘ</tspan><tspan x="470" dy="16" fill="#66ff99" opacity="0.75">ﾆ</tspan><tspan x="470" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ｶ</tspan>
       </text>
     </g>
     <g class="c16">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.89s" repeatCount="indefinite" begin="-4.41s" />
-      <text x="466" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="466" dy="0" fill="#003b00" opacity="0.35">ﾗ</tspan><tspan x="466" dy="15" fill="#003b00" opacity="0.35">ﾆ</tspan><tspan x="466" dy="15" fill="#003b00" opacity="0.35">ｱ</tspan><tspan x="466" dy="15" fill="#003b00" opacity="0.35">ｻ</tspan><tspan x="466" dy="15" fill="#003b00" opacity="0.35">ｻ</tspan><tspan x="466" dy="15" fill="#003b00" opacity="0.35">ﾔ</tspan><tspan x="466" dy="15" fill="#008f11" opacity="0.6">ｶ</tspan><tspan x="466" dy="15" fill="#008f11" opacity="0.6">+</tspan><tspan x="466" dy="15" fill="#008f11" opacity="0.6">#</tspan><tspan x="466" dy="15" fill="#00ff41" opacity="0.85">8</tspan><tspan x="466" dy="15" fill="#00ff41" opacity="0.85">D</tspan><tspan x="466" dy="15" fill="#00ff41" opacity="0.85">5</tspan><tspan x="466" dy="15" fill="#55ff88" opacity="0.95">ﾗ</tspan><tspan x="466" dy="15" fill="#55ff88" opacity="0.95">=</tspan><tspan x="466" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">ﾔ</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="4.52s" repeatCount="indefinite" begin="-3.12s" />
+      <text x="500" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="500" dy="0" fill="#003b00" opacity="0.18">Y</tspan><tspan x="500" dy="16" fill="#003b00" opacity="0.18">Y</tspan><tspan x="500" dy="16" fill="#008f11" opacity="0.35">+</tspan><tspan x="500" dy="16" fill="#008f11" opacity="0.35">3</tspan><tspan x="500" dy="16" fill="#008f11" opacity="0.35">ﾇ</tspan><tspan x="500" dy="16" fill="#00ff41" opacity="0.55">ﾘ</tspan><tspan x="500" dy="16" fill="#00ff41" opacity="0.55">ﾑ</tspan><tspan x="500" dy="16" fill="#00ff41" opacity="0.55">ﾏ</tspan><tspan x="500" dy="16" fill="#66ff99" opacity="0.75">Z</tspan><tspan x="500" dy="16" fill="#66ff99" opacity="0.75">ｻ</tspan><tspan x="500" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ﾜ</tspan>
       </text>
     </g>
     <g class="c17">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.93s" repeatCount="indefinite" begin="-4.39s" />
-      <text x="494" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="494" dy="0" fill="#003b00" opacity="0.35">ｾ</tspan><tspan x="494" dy="15" fill="#003b00" opacity="0.35">ｼ</tspan><tspan x="494" dy="15" fill="#003b00" opacity="0.35">ﾂ</tspan><tspan x="494" dy="15" fill="#003b00" opacity="0.35">F</tspan><tspan x="494" dy="15" fill="#003b00" opacity="0.35">ﾀ</tspan><tspan x="494" dy="15" fill="#003b00" opacity="0.35">8</tspan><tspan x="494" dy="15" fill="#003b00" opacity="0.35">ｳ</tspan><tspan x="494" dy="15" fill="#003b00" opacity="0.35">C</tspan><tspan x="494" dy="15" fill="#008f11" opacity="0.6">7</tspan><tspan x="494" dy="15" fill="#008f11" opacity="0.6">Z</tspan><tspan x="494" dy="15" fill="#008f11" opacity="0.6">ﾓ</tspan><tspan x="494" dy="15" fill="#00ff41" opacity="0.85">ﾔ</tspan><tspan x="494" dy="15" fill="#00ff41" opacity="0.85">C</tspan><tspan x="494" dy="15" fill="#00ff41" opacity="0.85">Z</tspan><tspan x="494" dy="15" fill="#55ff88" opacity="0.95">ﾐ</tspan><tspan x="494" dy="15" fill="#55ff88" opacity="0.95">A</tspan><tspan x="494" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">ﾇ</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="4.86s" repeatCount="indefinite" begin="-4.87s" />
+      <text x="530" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="530" dy="0" fill="#003b00" opacity="0.18">ﾏ</tspan><tspan x="530" dy="16" fill="#008f11" opacity="0.35">%</tspan><tspan x="530" dy="16" fill="#008f11" opacity="0.35">ｵ</tspan><tspan x="530" dy="16" fill="#008f11" opacity="0.35">ｴ</tspan><tspan x="530" dy="16" fill="#00ff41" opacity="0.55">&gt;</tspan><tspan x="530" dy="16" fill="#00ff41" opacity="0.55">ﾋ</tspan><tspan x="530" dy="16" fill="#00ff41" opacity="0.55">8</tspan><tspan x="530" dy="16" fill="#66ff99" opacity="0.75">ﾋ</tspan><tspan x="530" dy="16" fill="#66ff99" opacity="0.75">=</tspan><tspan x="530" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">X</tspan>
       </text>
     </g>
     <g class="c18">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="2.65s" repeatCount="indefinite" begin="-1.42s" />
-      <text x="522" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="522" dy="0" fill="#003b00" opacity="0.35">ﾋ</tspan><tspan x="522" dy="15" fill="#003b00" opacity="0.35">Y</tspan><tspan x="522" dy="15" fill="#003b00" opacity="0.35">7</tspan><tspan x="522" dy="15" fill="#003b00" opacity="0.35">ｷ</tspan><tspan x="522" dy="15" fill="#003b00" opacity="0.35">Y</tspan><tspan x="522" dy="15" fill="#008f11" opacity="0.6">ｼ</tspan><tspan x="522" dy="15" fill="#008f11" opacity="0.6">ｶ</tspan><tspan x="522" dy="15" fill="#008f11" opacity="0.6">C</tspan><tspan x="522" dy="15" fill="#00ff41" opacity="0.85">ｦ</tspan><tspan x="522" dy="15" fill="#00ff41" opacity="0.85">+</tspan><tspan x="522" dy="15" fill="#00ff41" opacity="0.85">ﾇ</tspan><tspan x="522" dy="15" fill="#55ff88" opacity="0.95">7</tspan><tspan x="522" dy="15" fill="#55ff88" opacity="0.95">9</tspan><tspan x="522" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">/</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="2.93s" repeatCount="indefinite" begin="-2.04s" />
+      <text x="560" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="560" dy="0" fill="#003b00" opacity="0.18">ﾈ</tspan><tspan x="560" dy="16" fill="#003b00" opacity="0.18">A</tspan><tspan x="560" dy="16" fill="#003b00" opacity="0.18">ﾇ</tspan><tspan x="560" dy="16" fill="#003b00" opacity="0.18">ﾓ</tspan><tspan x="560" dy="16" fill="#008f11" opacity="0.35">ﾈ</tspan><tspan x="560" dy="16" fill="#008f11" opacity="0.35">+</tspan><tspan x="560" dy="16" fill="#008f11" opacity="0.35">ｹ</tspan><tspan x="560" dy="16" fill="#00ff41" opacity="0.55">ﾗ</tspan><tspan x="560" dy="16" fill="#00ff41" opacity="0.55">?</tspan><tspan x="560" dy="16" fill="#00ff41" opacity="0.55">ﾔ</tspan><tspan x="560" dy="16" fill="#66ff99" opacity="0.75">2</tspan><tspan x="560" dy="16" fill="#66ff99" opacity="0.75">5</tspan><tspan x="560" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">Z</tspan>
       </text>
     </g>
     <g class="c19">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="4.26s" repeatCount="indefinite" begin="-2.56s" />
-      <text x="550" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="550" dy="0" fill="#003b00" opacity="0.35">ｶ</tspan><tspan x="550" dy="15" fill="#003b00" opacity="0.35">ｼ</tspan><tspan x="550" dy="15" fill="#008f11" opacity="0.6">1</tspan><tspan x="550" dy="15" fill="#008f11" opacity="0.6">8</tspan><tspan x="550" dy="15" fill="#008f11" opacity="0.6">+</tspan><tspan x="550" dy="15" fill="#00ff41" opacity="0.85">ﾐ</tspan><tspan x="550" dy="15" fill="#00ff41" opacity="0.85">2</tspan><tspan x="550" dy="15" fill="#00ff41" opacity="0.85">4</tspan><tspan x="550" dy="15" fill="#55ff88" opacity="0.95">ﾂ</tspan><tspan x="550" dy="15" fill="#55ff88" opacity="0.95">=</tspan><tspan x="550" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">+</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="2.59s" repeatCount="indefinite" begin="-1.76s" />
+      <text x="590" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="590" dy="0" fill="#003b00" opacity="0.18">ﾒ</tspan><tspan x="590" dy="16" fill="#003b00" opacity="0.18">5</tspan><tspan x="590" dy="16" fill="#008f11" opacity="0.35">ﾊ</tspan><tspan x="590" dy="16" fill="#008f11" opacity="0.35">ﾔ</tspan><tspan x="590" dy="16" fill="#008f11" opacity="0.35">4</tspan><tspan x="590" dy="16" fill="#00ff41" opacity="0.55">ﾀ</tspan><tspan x="590" dy="16" fill="#00ff41" opacity="0.55">A</tspan><tspan x="590" dy="16" fill="#00ff41" opacity="0.55">C</tspan><tspan x="590" dy="16" fill="#66ff99" opacity="0.75">ｵ</tspan><tspan x="590" dy="16" fill="#66ff99" opacity="0.75">1</tspan><tspan x="590" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ﾐ</tspan>
       </text>
     </g>
     <g class="c20">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.03s" repeatCount="indefinite" begin="-1.89s" />
-      <text x="578" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="578" dy="0" fill="#003b00" opacity="0.35">Y</tspan><tspan x="578" dy="15" fill="#003b00" opacity="0.35">ﾑ</tspan><tspan x="578" dy="15" fill="#003b00" opacity="0.35">ﾊ</tspan><tspan x="578" dy="15" fill="#003b00" opacity="0.35">/</tspan><tspan x="578" dy="15" fill="#003b00" opacity="0.35">1</tspan><tspan x="578" dy="15" fill="#003b00" opacity="0.35">ﾔ</tspan><tspan x="578" dy="15" fill="#003b00" opacity="0.35">ﾕ</tspan><tspan x="578" dy="15" fill="#008f11" opacity="0.6">E</tspan><tspan x="578" dy="15" fill="#008f11" opacity="0.6">ｾ</tspan><tspan x="578" dy="15" fill="#008f11" opacity="0.6">ｵ</tspan><tspan x="578" dy="15" fill="#00ff41" opacity="0.85">ｵ</tspan><tspan x="578" dy="15" fill="#00ff41" opacity="0.85">ｵ</tspan><tspan x="578" dy="15" fill="#00ff41" opacity="0.85">/</tspan><tspan x="578" dy="15" fill="#55ff88" opacity="0.95">8</tspan><tspan x="578" dy="15" fill="#55ff88" opacity="0.95">9</tspan><tspan x="578" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">ｺ</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="3.71s" repeatCount="indefinite" begin="-1.61s" />
+      <text x="620" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="620" dy="0" fill="#003b00" opacity="0.18">ｳ</tspan><tspan x="620" dy="16" fill="#003b00" opacity="0.18">8</tspan><tspan x="620" dy="16" fill="#008f11" opacity="0.35">0</tspan><tspan x="620" dy="16" fill="#008f11" opacity="0.35">=</tspan><tspan x="620" dy="16" fill="#008f11" opacity="0.35">&gt;</tspan><tspan x="620" dy="16" fill="#00ff41" opacity="0.55">ｴ</tspan><tspan x="620" dy="16" fill="#00ff41" opacity="0.55">ﾓ</tspan><tspan x="620" dy="16" fill="#00ff41" opacity="0.55">#</tspan><tspan x="620" dy="16" fill="#66ff99" opacity="0.75">F</tspan><tspan x="620" dy="16" fill="#66ff99" opacity="0.75">8</tspan><tspan x="620" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ｾ</tspan>
       </text>
     </g>
     <g class="c21">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="2.46s" repeatCount="indefinite" begin="-1.57s" />
-      <text x="606" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="606" dy="0" fill="#003b00" opacity="0.35">ｦ</tspan><tspan x="606" dy="15" fill="#003b00" opacity="0.35">=</tspan><tspan x="606" dy="15" fill="#008f11" opacity="0.6">Z</tspan><tspan x="606" dy="15" fill="#008f11" opacity="0.6">A</tspan><tspan x="606" dy="15" fill="#008f11" opacity="0.6">+</tspan><tspan x="606" dy="15" fill="#00ff41" opacity="0.85">?</tspan><tspan x="606" dy="15" fill="#00ff41" opacity="0.85">ﾂ</tspan><tspan x="606" dy="15" fill="#00ff41" opacity="0.85">ｴ</tspan><tspan x="606" dy="15" fill="#55ff88" opacity="0.95">0</tspan><tspan x="606" dy="15" fill="#55ff88" opacity="0.95">1</tspan><tspan x="606" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">=</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="4.15s" repeatCount="indefinite" begin="-4.07s" />
+      <text x="650" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="650" dy="0" fill="#003b00" opacity="0.18">ｺ</tspan><tspan x="650" dy="16" fill="#008f11" opacity="0.35">8</tspan><tspan x="650" dy="16" fill="#008f11" opacity="0.35">ﾜ</tspan><tspan x="650" dy="16" fill="#008f11" opacity="0.35">ｿ</tspan><tspan x="650" dy="16" fill="#00ff41" opacity="0.55">Y</tspan><tspan x="650" dy="16" fill="#00ff41" opacity="0.55">%</tspan><tspan x="650" dy="16" fill="#00ff41" opacity="0.55">ﾜ</tspan><tspan x="650" dy="16" fill="#66ff99" opacity="0.75">*</tspan><tspan x="650" dy="16" fill="#66ff99" opacity="0.75">ｺ</tspan><tspan x="650" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ｼ</tspan>
       </text>
     </g>
     <g class="c22">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.05s" repeatCount="indefinite" begin="-1.05s" />
-      <text x="634" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="634" dy="0" fill="#003b00" opacity="0.35">ﾅ</tspan><tspan x="634" dy="15" fill="#003b00" opacity="0.35">ﾜ</tspan><tspan x="634" dy="15" fill="#003b00" opacity="0.35">1</tspan><tspan x="634" dy="15" fill="#003b00" opacity="0.35">+</tspan><tspan x="634" dy="15" fill="#003b00" opacity="0.35">ﾆ</tspan><tspan x="634" dy="15" fill="#008f11" opacity="0.6">ｻ</tspan><tspan x="634" dy="15" fill="#008f11" opacity="0.6">B</tspan><tspan x="634" dy="15" fill="#008f11" opacity="0.6">+</tspan><tspan x="634" dy="15" fill="#00ff41" opacity="0.85">ｦ</tspan><tspan x="634" dy="15" fill="#00ff41" opacity="0.85">/</tspan><tspan x="634" dy="15" fill="#00ff41" opacity="0.85">/</tspan><tspan x="634" dy="15" fill="#55ff88" opacity="0.95">ﾑ</tspan><tspan x="634" dy="15" fill="#55ff88" opacity="0.95">ﾇ</tspan><tspan x="634" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">ﾗ</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="3.74s" repeatCount="indefinite" begin="-1.1s" />
+      <text x="680" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="680" dy="0" fill="#003b00" opacity="0.18">ﾒ</tspan><tspan x="680" dy="16" fill="#003b00" opacity="0.18">0</tspan><tspan x="680" dy="16" fill="#003b00" opacity="0.18">ﾑ</tspan><tspan x="680" dy="16" fill="#008f11" opacity="0.35">#</tspan><tspan x="680" dy="16" fill="#008f11" opacity="0.35">ｶ</tspan><tspan x="680" dy="16" fill="#008f11" opacity="0.35">ﾏ</tspan><tspan x="680" dy="16" fill="#00ff41" opacity="0.55">ﾇ</tspan><tspan x="680" dy="16" fill="#00ff41" opacity="0.55">ｽ</tspan><tspan x="680" dy="16" fill="#00ff41" opacity="0.55">ﾋ</tspan><tspan x="680" dy="16" fill="#66ff99" opacity="0.75">ｽ</tspan><tspan x="680" dy="16" fill="#66ff99" opacity="0.75">ﾃ</tspan><tspan x="680" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ﾔ</tspan>
       </text>
     </g>
     <g class="c23">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.63s" repeatCount="indefinite" begin="-2.71s" />
-      <text x="662" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="662" dy="0" fill="#003b00" opacity="0.35">ｦ</tspan><tspan x="662" dy="15" fill="#003b00" opacity="0.35">F</tspan><tspan x="662" dy="15" fill="#003b00" opacity="0.35">4</tspan><tspan x="662" dy="15" fill="#003b00" opacity="0.35">ｴ</tspan><tspan x="662" dy="15" fill="#008f11" opacity="0.6">ｶ</tspan><tspan x="662" dy="15" fill="#008f11" opacity="0.6">F</tspan><tspan x="662" dy="15" fill="#008f11" opacity="0.6">Y</tspan><tspan x="662" dy="15" fill="#00ff41" opacity="0.85">ｴ</tspan><tspan x="662" dy="15" fill="#00ff41" opacity="0.85">&lt;</tspan><tspan x="662" dy="15" fill="#00ff41" opacity="0.85">F</tspan><tspan x="662" dy="15" fill="#55ff88" opacity="0.95">ﾎ</tspan><tspan x="662" dy="15" fill="#55ff88" opacity="0.95">Z</tspan><tspan x="662" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">ﾒ</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="4.54s" repeatCount="indefinite" begin="-0.76s" />
+      <text x="710" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="710" dy="0" fill="#003b00" opacity="0.18">ﾆ</tspan><tspan x="710" dy="16" fill="#003b00" opacity="0.18">ﾔ</tspan><tspan x="710" dy="16" fill="#003b00" opacity="0.18">ｽ</tspan><tspan x="710" dy="16" fill="#003b00" opacity="0.18">ﾈ</tspan><tspan x="710" dy="16" fill="#008f11" opacity="0.35">ﾜ</tspan><tspan x="710" dy="16" fill="#008f11" opacity="0.35">ﾕ</tspan><tspan x="710" dy="16" fill="#008f11" opacity="0.35">ﾓ</tspan><tspan x="710" dy="16" fill="#00ff41" opacity="0.55">ｹ</tspan><tspan x="710" dy="16" fill="#00ff41" opacity="0.55">ﾜ</tspan><tspan x="710" dy="16" fill="#00ff41" opacity="0.55">Y</tspan><tspan x="710" dy="16" fill="#66ff99" opacity="0.75">ﾜ</tspan><tspan x="710" dy="16" fill="#66ff99" opacity="0.75">Y</tspan><tspan x="710" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ﾅ</tspan>
       </text>
     </g>
     <g class="c24">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.4s" repeatCount="indefinite" begin="-0.86s" />
-      <text x="690" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="690" dy="0" fill="#003b00" opacity="0.35">ｦ</tspan><tspan x="690" dy="15" fill="#003b00" opacity="0.35">ﾗ</tspan><tspan x="690" dy="15" fill="#003b00" opacity="0.35">A</tspan><tspan x="690" dy="15" fill="#008f11" opacity="0.6">/</tspan><tspan x="690" dy="15" fill="#008f11" opacity="0.6">ｽ</tspan><tspan x="690" dy="15" fill="#008f11" opacity="0.6">ｾ</tspan><tspan x="690" dy="15" fill="#00ff41" opacity="0.85">ｵ</tspan><tspan x="690" dy="15" fill="#00ff41" opacity="0.85">ﾒ</tspan><tspan x="690" dy="15" fill="#00ff41" opacity="0.85">ｾ</tspan><tspan x="690" dy="15" fill="#55ff88" opacity="0.95">ｶ</tspan><tspan x="690" dy="15" fill="#55ff88" opacity="0.95">1</tspan><tspan x="690" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">7</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="4.62s" repeatCount="indefinite" begin="-4.09s" />
+      <text x="740" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="740" dy="0" fill="#003b00" opacity="0.18">ｦ</tspan><tspan x="740" dy="16" fill="#003b00" opacity="0.18">ｶ</tspan><tspan x="740" dy="16" fill="#008f11" opacity="0.35">%</tspan><tspan x="740" dy="16" fill="#008f11" opacity="0.35">ﾔ</tspan><tspan x="740" dy="16" fill="#008f11" opacity="0.35">8</tspan><tspan x="740" dy="16" fill="#00ff41" opacity="0.55">ﾊ</tspan><tspan x="740" dy="16" fill="#00ff41" opacity="0.55">ﾑ</tspan><tspan x="740" dy="16" fill="#00ff41" opacity="0.55">0</tspan><tspan x="740" dy="16" fill="#66ff99" opacity="0.75">Y</tspan><tspan x="740" dy="16" fill="#66ff99" opacity="0.75">&gt;</tspan><tspan x="740" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">/</tspan>
       </text>
     </g>
     <g class="c25">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.94s" repeatCount="indefinite" begin="-4.03s" />
-      <text x="718" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="718" dy="0" fill="#003b00" opacity="0.35">ﾀ</tspan><tspan x="718" dy="15" fill="#003b00" opacity="0.35">%</tspan><tspan x="718" dy="15" fill="#003b00" opacity="0.35">4</tspan><tspan x="718" dy="15" fill="#003b00" opacity="0.35">&gt;</tspan><tspan x="718" dy="15" fill="#003b00" opacity="0.35">ｶ</tspan><tspan x="718" dy="15" fill="#008f11" opacity="0.6">ﾀ</tspan><tspan x="718" dy="15" fill="#008f11" opacity="0.6">ﾘ</tspan><tspan x="718" dy="15" fill="#008f11" opacity="0.6">ｽ</tspan><tspan x="718" dy="15" fill="#00ff41" opacity="0.85">ﾒ</tspan><tspan x="718" dy="15" fill="#00ff41" opacity="0.85">ｱ</tspan><tspan x="718" dy="15" fill="#00ff41" opacity="0.85">ﾒ</tspan><tspan x="718" dy="15" fill="#55ff88" opacity="0.95">?</tspan><tspan x="718" dy="15" fill="#55ff88" opacity="0.95">ﾜ</tspan><tspan x="718" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">0</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="2.77s" repeatCount="indefinite" begin="-1.42s" />
+      <text x="770" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="770" dy="0" fill="#003b00" opacity="0.18">ﾋ</tspan><tspan x="770" dy="16" fill="#008f11" opacity="0.35">/</tspan><tspan x="770" dy="16" fill="#008f11" opacity="0.35">ｼ</tspan><tspan x="770" dy="16" fill="#008f11" opacity="0.35">ﾋ</tspan><tspan x="770" dy="16" fill="#00ff41" opacity="0.55">1</tspan><tspan x="770" dy="16" fill="#00ff41" opacity="0.55">A</tspan><tspan x="770" dy="16" fill="#00ff41" opacity="0.55">2</tspan><tspan x="770" dy="16" fill="#66ff99" opacity="0.75">Y</tspan><tspan x="770" dy="16" fill="#66ff99" opacity="0.75">0</tspan><tspan x="770" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ｿ</tspan>
       </text>
     </g>
     <g class="c26">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.81s" repeatCount="indefinite" begin="-4.03s" />
-      <text x="746" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="746" dy="0" fill="#003b00" opacity="0.35">ﾈ</tspan><tspan x="746" dy="15" fill="#003b00" opacity="0.35">ﾆ</tspan><tspan x="746" dy="15" fill="#003b00" opacity="0.35">ｴ</tspan><tspan x="746" dy="15" fill="#003b00" opacity="0.35">C</tspan><tspan x="746" dy="15" fill="#003b00" opacity="0.35">%</tspan><tspan x="746" dy="15" fill="#003b00" opacity="0.35">ﾗ</tspan><tspan x="746" dy="15" fill="#003b00" opacity="0.35">ﾎ</tspan><tspan x="746" dy="15" fill="#008f11" opacity="0.6">&lt;</tspan><tspan x="746" dy="15" fill="#008f11" opacity="0.6">ﾈ</tspan><tspan x="746" dy="15" fill="#008f11" opacity="0.6">ｱ</tspan><tspan x="746" dy="15" fill="#00ff41" opacity="0.85">X</tspan><tspan x="746" dy="15" fill="#00ff41" opacity="0.85">ﾎ</tspan><tspan x="746" dy="15" fill="#00ff41" opacity="0.85">3</tspan><tspan x="746" dy="15" fill="#55ff88" opacity="0.95">3</tspan><tspan x="746" dy="15" fill="#55ff88" opacity="0.95">ﾊ</tspan><tspan x="746" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">+</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="2.74s" repeatCount="indefinite" begin="-2.82s" />
+      <text x="800" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="800" dy="0" fill="#003b00" opacity="0.18">F</tspan><tspan x="800" dy="16" fill="#003b00" opacity="0.18">2</tspan><tspan x="800" dy="16" fill="#003b00" opacity="0.18">D</tspan><tspan x="800" dy="16" fill="#003b00" opacity="0.18">ｿ</tspan><tspan x="800" dy="16" fill="#003b00" opacity="0.18">2</tspan><tspan x="800" dy="16" fill="#008f11" opacity="0.35">ﾆ</tspan><tspan x="800" dy="16" fill="#008f11" opacity="0.35">2</tspan><tspan x="800" dy="16" fill="#008f11" opacity="0.35">ﾅ</tspan><tspan x="800" dy="16" fill="#00ff41" opacity="0.55">9</tspan><tspan x="800" dy="16" fill="#00ff41" opacity="0.55">1</tspan><tspan x="800" dy="16" fill="#00ff41" opacity="0.55">ｺ</tspan><tspan x="800" dy="16" fill="#66ff99" opacity="0.75">ｷ</tspan><tspan x="800" dy="16" fill="#66ff99" opacity="0.75">Y</tspan><tspan x="800" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ﾃ</tspan>
       </text>
     </g>
     <g class="c27">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.61s" repeatCount="indefinite" begin="-2.55s" />
-      <text x="774" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="774" dy="0" fill="#003b00" opacity="0.35">ｱ</tspan><tspan x="774" dy="15" fill="#003b00" opacity="0.35">B</tspan><tspan x="774" dy="15" fill="#003b00" opacity="0.35">?</tspan><tspan x="774" dy="15" fill="#003b00" opacity="0.35">ｴ</tspan><tspan x="774" dy="15" fill="#003b00" opacity="0.35">ﾐ</tspan><tspan x="774" dy="15" fill="#003b00" opacity="0.35">B</tspan><tspan x="774" dy="15" fill="#008f11" opacity="0.6">ﾜ</tspan><tspan x="774" dy="15" fill="#008f11" opacity="0.6">ﾐ</tspan><tspan x="774" dy="15" fill="#008f11" opacity="0.6">ｳ</tspan><tspan x="774" dy="15" fill="#00ff41" opacity="0.85">Z</tspan><tspan x="774" dy="15" fill="#00ff41" opacity="0.85">ﾐ</tspan><tspan x="774" dy="15" fill="#00ff41" opacity="0.85">ｦ</tspan><tspan x="774" dy="15" fill="#55ff88" opacity="0.95">8</tspan><tspan x="774" dy="15" fill="#55ff88" opacity="0.95">ｳ</tspan><tspan x="774" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">A</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="3.77s" repeatCount="indefinite" begin="-3.62s" />
+      <text x="830" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="830" dy="0" fill="#003b00" opacity="0.18">A</tspan><tspan x="830" dy="16" fill="#008f11" opacity="0.35">ｴ</tspan><tspan x="830" dy="16" fill="#008f11" opacity="0.35">F</tspan><tspan x="830" dy="16" fill="#008f11" opacity="0.35">ﾋ</tspan><tspan x="830" dy="16" fill="#00ff41" opacity="0.55">D</tspan><tspan x="830" dy="16" fill="#00ff41" opacity="0.55">Z</tspan><tspan x="830" dy="16" fill="#00ff41" opacity="0.55">ｽ</tspan><tspan x="830" dy="16" fill="#66ff99" opacity="0.75">8</tspan><tspan x="830" dy="16" fill="#66ff99" opacity="0.75">7</tspan><tspan x="830" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ｷ</tspan>
       </text>
     </g>
     <g class="c28">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="3.98s" repeatCount="indefinite" begin="-1.15s" />
-      <text x="802" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="802" dy="0" fill="#003b00" opacity="0.35">ｶ</tspan><tspan x="802" dy="15" fill="#003b00" opacity="0.35">ﾈ</tspan><tspan x="802" dy="15" fill="#003b00" opacity="0.35">4</tspan><tspan x="802" dy="15" fill="#003b00" opacity="0.35">ﾜ</tspan><tspan x="802" dy="15" fill="#003b00" opacity="0.35">5</tspan><tspan x="802" dy="15" fill="#008f11" opacity="0.6">ﾓ</tspan><tspan x="802" dy="15" fill="#008f11" opacity="0.6">1</tspan><tspan x="802" dy="15" fill="#008f11" opacity="0.6">ﾘ</tspan><tspan x="802" dy="15" fill="#00ff41" opacity="0.85">ｿ</tspan><tspan x="802" dy="15" fill="#00ff41" opacity="0.85">ｶ</tspan><tspan x="802" dy="15" fill="#00ff41" opacity="0.85">ﾔ</tspan><tspan x="802" dy="15" fill="#55ff88" opacity="0.95">3</tspan><tspan x="802" dy="15" fill="#55ff88" opacity="0.95">A</tspan><tspan x="802" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">/</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="4.91s" repeatCount="indefinite" begin="-4.71s" />
+      <text x="860" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="860" dy="0" fill="#003b00" opacity="0.18">ｵ</tspan><tspan x="860" dy="16" fill="#003b00" opacity="0.18">ﾆ</tspan><tspan x="860" dy="16" fill="#003b00" opacity="0.18">=</tspan><tspan x="860" dy="16" fill="#003b00" opacity="0.18">ﾈ</tspan><tspan x="860" dy="16" fill="#003b00" opacity="0.18">ｼ</tspan><tspan x="860" dy="16" fill="#003b00" opacity="0.18">ﾃ</tspan><tspan x="860" dy="16" fill="#003b00" opacity="0.18">ﾃ</tspan><tspan x="860" dy="16" fill="#008f11" opacity="0.35">ｵ</tspan><tspan x="860" dy="16" fill="#008f11" opacity="0.35">ｦ</tspan><tspan x="860" dy="16" fill="#008f11" opacity="0.35">ﾑ</tspan><tspan x="860" dy="16" fill="#00ff41" opacity="0.55">#</tspan><tspan x="860" dy="16" fill="#00ff41" opacity="0.55">*</tspan><tspan x="860" dy="16" fill="#00ff41" opacity="0.55">*</tspan><tspan x="860" dy="16" fill="#66ff99" opacity="0.75">X</tspan><tspan x="860" dy="16" fill="#66ff99" opacity="0.75">ﾃ</tspan><tspan x="860" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ﾑ</tspan>
       </text>
     </g>
     <g class="c29">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="4.09s" repeatCount="indefinite" begin="-2.76s" />
-      <text x="830" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="830" dy="0" fill="#003b00" opacity="0.35">ｻ</tspan><tspan x="830" dy="15" fill="#003b00" opacity="0.35">ｻ</tspan><tspan x="830" dy="15" fill="#008f11" opacity="0.6">ｷ</tspan><tspan x="830" dy="15" fill="#008f11" opacity="0.6">ﾀ</tspan><tspan x="830" dy="15" fill="#008f11" opacity="0.6">Z</tspan><tspan x="830" dy="15" fill="#00ff41" opacity="0.85">5</tspan><tspan x="830" dy="15" fill="#00ff41" opacity="0.85">ﾑ</tspan><tspan x="830" dy="15" fill="#00ff41" opacity="0.85">ｼ</tspan><tspan x="830" dy="15" fill="#55ff88" opacity="0.95">ｺ</tspan><tspan x="830" dy="15" fill="#55ff88" opacity="0.95">ｾ</tspan><tspan x="830" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">9</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="4.45s" repeatCount="indefinite" begin="-1.96s" />
+      <text x="890" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="890" dy="0" fill="#003b00" opacity="0.18">ｱ</tspan><tspan x="890" dy="16" fill="#003b00" opacity="0.18">ﾇ</tspan><tspan x="890" dy="16" fill="#008f11" opacity="0.35">ｹ</tspan><tspan x="890" dy="16" fill="#008f11" opacity="0.35">ｷ</tspan><tspan x="890" dy="16" fill="#008f11" opacity="0.35">A</tspan><tspan x="890" dy="16" fill="#00ff41" opacity="0.55">1</tspan><tspan x="890" dy="16" fill="#00ff41" opacity="0.55">2</tspan><tspan x="890" dy="16" fill="#00ff41" opacity="0.55">=</tspan><tspan x="890" dy="16" fill="#66ff99" opacity="0.75">/</tspan><tspan x="890" dy="16" fill="#66ff99" opacity="0.75">ﾋ</tspan><tspan x="890" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ﾈ</tspan>
       </text>
     </g>
     <g class="c30">
-      <animateTransform attributeName="transform" type="translate" from="0,-260" to="0,270" dur="2.4s" repeatCount="indefinite" begin="-0.32s" />
-      <text x="858" y="0" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="bold">
-        <tspan x="858" dy="0" fill="#003b00" opacity="0.35">ｵ</tspan><tspan x="858" dy="15" fill="#003b00" opacity="0.35">ﾎ</tspan><tspan x="858" dy="15" fill="#003b00" opacity="0.35">5</tspan><tspan x="858" dy="15" fill="#003b00" opacity="0.35">ｿ</tspan><tspan x="858" dy="15" fill="#008f11" opacity="0.6">ｼ</tspan><tspan x="858" dy="15" fill="#008f11" opacity="0.6">&lt;</tspan><tspan x="858" dy="15" fill="#008f11" opacity="0.6">4</tspan><tspan x="858" dy="15" fill="#00ff41" opacity="0.85">%</tspan><tspan x="858" dy="15" fill="#00ff41" opacity="0.85">ﾕ</tspan><tspan x="858" dy="15" fill="#00ff41" opacity="0.85">ﾅ</tspan><tspan x="858" dy="15" fill="#55ff88" opacity="0.95">Z</tspan><tspan x="858" dy="15" fill="#55ff88" opacity="0.95">0</tspan><tspan x="858" dy="15" fill="#ffffff" opacity="1" filter="url(#matrixGlow)">Z</tspan>
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="3.44s" repeatCount="indefinite" begin="-2.49s" />
+      <text x="920" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="920" dy="0" fill="#003b00" opacity="0.18">C</tspan><tspan x="920" dy="16" fill="#003b00" opacity="0.18">5</tspan><tspan x="920" dy="16" fill="#003b00" opacity="0.18">ｳ</tspan><tspan x="920" dy="16" fill="#003b00" opacity="0.18">=</tspan><tspan x="920" dy="16" fill="#003b00" opacity="0.18">ﾐ</tspan><tspan x="920" dy="16" fill="#003b00" opacity="0.18">ﾈ</tspan><tspan x="920" dy="16" fill="#008f11" opacity="0.35">4</tspan><tspan x="920" dy="16" fill="#008f11" opacity="0.35">ｿ</tspan><tspan x="920" dy="16" fill="#008f11" opacity="0.35">4</tspan><tspan x="920" dy="16" fill="#00ff41" opacity="0.55">ﾔ</tspan><tspan x="920" dy="16" fill="#00ff41" opacity="0.55">ﾒ</tspan><tspan x="920" dy="16" fill="#00ff41" opacity="0.55">A</tspan><tspan x="920" dy="16" fill="#66ff99" opacity="0.75">%</tspan><tspan x="920" dy="16" fill="#66ff99" opacity="0.75">ｹ</tspan><tspan x="920" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">A</tspan>
+      </text>
+    </g>
+    <g class="c31">
+      <animateTransform attributeName="transform" type="translate" from="0,-280" to="0,300" dur="4.24s" repeatCount="indefinite" begin="-3.55s" />
+      <text x="950" y="0" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="12" font-weight="bold">
+        <tspan x="950" dy="0" fill="#003b00" opacity="0.18">ﾏ</tspan><tspan x="950" dy="16" fill="#003b00" opacity="0.18">ﾆ</tspan><tspan x="950" dy="16" fill="#003b00" opacity="0.18">?</tspan><tspan x="950" dy="16" fill="#008f11" opacity="0.35">&lt;</tspan><tspan x="950" dy="16" fill="#008f11" opacity="0.35">ﾋ</tspan><tspan x="950" dy="16" fill="#008f11" opacity="0.35">ｴ</tspan><tspan x="950" dy="16" fill="#00ff41" opacity="0.55">E</tspan><tspan x="950" dy="16" fill="#00ff41" opacity="0.55">C</tspan><tspan x="950" dy="16" fill="#00ff41" opacity="0.55">ﾒ</tspan><tspan x="950" dy="16" fill="#66ff99" opacity="0.75">%</tspan><tspan x="950" dy="16" fill="#66ff99" opacity="0.75">ｱ</tspan><tspan x="950" dy="16" fill="#ffffff" opacity="0.9" filter="url(#dropGlow)">ﾆ</tspan>
       </text>
     </g>
   </g>
 
-  <!-- Ambient Scanning Beam -->
-  <rect x="0" y="0" width="900" height="8" fill="#00ff41" class="scanline">
-    <animateTransform attributeName="transform" type="translate" from="0,-10" to="0,250" dur="3.5s" repeatCount="indefinite" />
+  <!-- Moving Ambient Scanline -->
+  <rect x="0" y="0" width="1000" height="10" fill="#00ff41" class="scan-beam">
+    <animateTransform attributeName="transform" type="translate" from="0,-20" to="0,290" dur="4s" repeatCount="indefinite" />
   </rect>
 
-  <!-- Center Cyber HUD Terminal Window -->
-  <g transform="translate(130, 22)">
-    <!-- Terminal Background Box -->
-    <rect width="640" height="196" rx="10" fill="#030904" fill-opacity="0.88" stroke="#00ff41" stroke-width="1.6" class="hud-border" filter="url(#hudGlow)" />
+  <!-- High-Precision Executive HUD Terminal Card -->
+  <g transform="translate(45, 24)" filter="url(#boxShadow)">
+    <!-- Card Frame -->
+    <rect width="910" height="232" rx="14" fill="url(#cardGrad)" stroke="#00ff41" stroke-width="1.5" class="hud-border" />
 
-    <!-- Terminal Titlebar -->
-    <path d="M 0 10 C 0 4.5 4.5 0 10 0 L 630 0 C 635.5 0 640 4.5 640 10 L 640 28 L 0 28 Z" fill="#051508" fill-opacity="0.9" />
-    <line x1="0" y1="28" x2="640" y2="28" stroke="#00ff41" stroke-opacity="0.4" stroke-width="1" />
+    <!-- Top Status Bar -->
+    <path d="M 0 14 C 0 6.3 6.3 0 14 0 L 896 0 C 903.7 0 910 6.3 910 14 L 910 34 L 0 34 Z" fill="#031106" fill-opacity="0.9" />
+    <line x1="0" y1="34" x2="910" y2="34" stroke="#00ff41" stroke-opacity="0.25" stroke-width="1" />
 
-    <!-- Window Controls -->
-    <circle cx="18" cy="14" r="5" fill="#ff5f56" />
-    <circle cx="34" cy="14" r="5" fill="#ffbd2e" />
-    <circle cx="50" cy="14" r="5" fill="#27c93f" />
+    <!-- Window Dots -->
+    <circle cx="22" cy="17" r="5" fill="#ff5f56" />
+    <circle cx="38" cy="17" r="5" fill="#ffbd2e" />
+    <circle cx="54" cy="17" r="5" fill="#27c93f" />
 
-    <!-- Terminal Prompt Header -->
-    <text x="70" y="18" fill="#7ee787" font-family="'Courier New', monospace" font-size="11" font-weight="bold" letter-spacing="1">root@matrix-core:~# ./exec_profile.sh --status=active</text>
+    <!-- System Indicators -->
+    <text x="75" y="21" fill="#7efa9a" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="11" font-weight="600" letter-spacing="1">SURFACE_KERNEL // AUTONOMOUS SYSTEMS ARCHITECTURE</text>
 
-    <!-- Corner Cybernetic Accent Brackets -->
-    <path d="M 12 40 L 12 34 L 24 34" stroke="#00ff41" stroke-width="2" fill="none" />
-    <path d="M 628 40 L 628 34 L 616 34" stroke="#00ff41" stroke-width="2" fill="none" />
-    <path d="M 12 180 L 12 186 L 24 186" stroke="#00ff41" stroke-width="2" fill="none" />
-    <path d="M 628 180 L 628 186 L 616 186" stroke="#00ff41" stroke-width="2" fill="none" />
+    <!-- Right Live Telemetry Tags -->
+    <g transform="translate(680, 10)">
+      <circle cx="10" cy="7" r="3.5" fill="#00ff41" class="pulse-beacon" />
+      <text x="20" y="11" fill="#00ff41" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="bold" letter-spacing="1">SYS: ONLINE</text>
+      <text x="110" y="11" fill="#7efa9a" font-family="'JetBrains Mono', monospace" font-size="10.5" font-weight="600" letter-spacing="1">LATENCY: 14ms</text>
+    </g>
 
-    <!-- Main Identity Title -->
-    <g transform="translate(320, 78)">
-      <text text-anchor="middle" fill="#00ff41" font-family="'JetBrains Mono', 'Fira Code', 'Courier New', monospace" font-size="32" font-weight="900" letter-spacing="4" filter="url(#matrixGlow)">
-        SURIYA PRAKASH<tspan class="cursor" fill="#ffffff">_</tspan>
+    <!-- Cyber Corner Accents -->
+    <path d="M 14 46 L 14 40 L 26 40" stroke="#00ff41" stroke-width="2" fill="none" />
+    <path d="M 896 46 L 896 40 L 884 40" stroke="#00ff41" stroke-width="2" fill="none" />
+    <path d="M 14 218 L 14 224 L 26 224" stroke="#00ff41" stroke-width="2" fill="none" />
+    <path d="M 896 218 L 896 224 L 884 224" stroke="#00ff41" stroke-width="2" fill="none" />
+
+    <!-- Main Identity & Core Focus Section -->
+    <g transform="translate(32, 60)">
+      <!-- Pre-heading Domain Tag -->
+      <text x="0" y="18" fill="#55ff88" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="700" letter-spacing="2">
+        &gt; AI/ML RESEARCHER  •  AUTONOMOUS AGENTS  •  EMBEDDED IoT
       </text>
-    </g>
 
-    <!-- Subtitle / Roles -->
-    <g transform="translate(320, 112)">
-      <text text-anchor="middle" fill="#55ff88" font-family="'Courier New', monospace" font-size="13" font-weight="bold" letter-spacing="2">
-        AI/ML &amp; DATA SCIENCE  //  IOT &amp; HARDWARE  //  FRONTEND
+      <!-- Primary Name Header -->
+      <text x="0" y="62" fill="url(#titleGrad)" font-family="'Inter', 'Segoe UI', 'JetBrains Mono', sans-serif" font-size="40" font-weight="900" letter-spacing="1.5" filter="url(#textGlow)">
+        SURIYA PRAKASH
       </text>
+
+      <!-- High-Impact Engineering Mission Statement -->
+      <text x="0" y="94" fill="#d2fcd8" font-family="'Segoe UI', -apple-system, sans-serif" font-size="14.5" font-weight="500" letter-spacing="0.3">
+        Engineering on-device visual perception models, sparse spatial algorithms, and hardware sensor telemetry.
+      </text>
+
+      <!-- Core Pillars Row -->
+      <g transform="translate(0, 114)">
+        <!-- Pill 1: PIXEL & Vision -->
+        <g transform="translate(0, 0)">
+          <rect width="250" height="28" rx="6" fill="#021c08" stroke="#00ff41" stroke-opacity="0.5" stroke-width="1" />
+          <text x="14" y="18" fill="#7efa9a" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">
+            ⚡ PIXEL: On-Device Vision Agent
+          </text>
+        </g>
+
+        <!-- Pill 2: Matrid Data Structure -->
+        <g transform="translate(262, 0)">
+          <rect width="260" height="28" rx="6" fill="#021c08" stroke="#00ff41" stroke-opacity="0.5" stroke-width="1" />
+          <text x="14" y="18" fill="#7efa9a" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">
+            🧩 Matrid: 2D Spatial Data Struct
+          </text>
+        </g>
+
+        <!-- Pill 3: Embedded IoT & ESP32 -->
+        <g transform="translate(534, 0)">
+          <rect width="246" height="28" rx="6" fill="#021c08" stroke="#00ff41" stroke-opacity="0.5" stroke-width="1" />
+          <text x="14" y="18" fill="#7efa9a" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">
+            🔌 Embedded C++ &amp; Telemetry
+          </text>
+        </g>
+      </g>
     </g>
 
-    <!-- Cyber Divider -->
-    <line x1="80" y1="130" x2="560" y2="130" stroke="#00ff41" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="6,4" />
-
-    <!-- HUD Telemetry Badges -->
-    <g transform="translate(50, 155)">
-      <!-- Badge 1: Neural Models -->
-      <g transform="translate(0, 0)">
-        <rect width="160" height="24" rx="4" fill="#002208" stroke="#00ff41" stroke-opacity="0.6" stroke-width="1" />
-        <circle cx="12" cy="12" r="3.5" fill="#00ff41" />
-        <text x="24" y="16" fill="#c3e88d" font-family="'Courier New', monospace" font-size="10" font-weight="bold" letter-spacing="1">ML &amp; PYTORCH</text>
-      </g>
-
-      <!-- Badge 2: Embedded C++ -->
-      <g transform="translate(190, 0)">
-        <rect width="160" height="24" rx="4" fill="#002208" stroke="#00ff41" stroke-opacity="0.6" stroke-width="1" />
-        <circle cx="12" cy="12" r="3.5" fill="#00ff41" />
-        <text x="24" y="16" fill="#c3e88d" font-family="'Courier New', monospace" font-size="10" font-weight="bold" letter-spacing="1">ESP32 &amp; C++ SENSORS</text>
-      </g>
-
-      <!-- Badge 3: Web Systems -->
-      <g transform="translate(380, 0)">
-        <rect width="160" height="24" rx="4" fill="#002208" stroke="#00ff41" stroke-opacity="0.6" stroke-width="1" />
-        <circle cx="12" cy="12" r="3.5" fill="#00ff41" />
-        <text x="24" y="16" fill="#c3e88d" font-family="'Courier New', monospace" font-size="10" font-weight="bold" letter-spacing="1">REACT &amp; WEB UIs</text>
-      </g>
+    <!-- Right Side HUD Spec Card -->
+    <g transform="translate(680, 52)">
+      <rect width="200" height="88" rx="8" fill="#021506" fill-opacity="0.8" stroke="#00ff41" stroke-opacity="0.3" stroke-width="1" />
+      <text x="16" y="22" fill="#55ff88" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="bold" letter-spacing="1">CORE_TELEMETRY</text>
+      <line x1="16" y1="28" x2="184" y2="28" stroke="#00ff41" stroke-opacity="0.2" stroke-width="1" />
+      
+      <text x="16" y="44" fill="#a3e7b2" font-family="'JetBrains Mono', monospace" font-size="10">● ARCH: Zero-Cloud VLM</text>
+      <text x="16" y="60" fill="#a3e7b2" font-family="'JetBrains Mono', monospace" font-size="10">● FIRMWARE: Low-Latency C++</text>
+      <text x="16" y="76" fill="#a3e7b2" font-family="'JetBrains Mono', monospace" font-size="10">● STACK: PyTorch • React</text>
     </g>
+
+    <!-- Bottom Accent Gradient Line -->
+    <line x1="30" y1="210" x2="880" y2="210" stroke="url(#accentLine)" stroke-width="1.5" />
   </g>
 </svg>
