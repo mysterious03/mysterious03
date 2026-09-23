@@ -1,7 +1,9 @@
 <div align="center">
 
-  <!-- Dynamic Matrix Animated Header Banner -->
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,45:002b00,100:00ff41&height=220&section=header&text=SURIYA%20PRAKASH&fontSize=52&fontAlignY=38&desc=AI%2FML%20%7C%20IoT%20Hardware%20Builder%20%7C%20Frontend%20Developer&descAlignY=58&descSize=18&fontColor=00ff41&descColor=7ee787" width="100%" alt="Suriya Prakash Matrix Banner" />
+  <!-- Dynamic Matrix Animated Digital Rain Banner -->
+  <a href="https://github.com/mysterious03">
+    <img src="https://raw.githubusercontent.com/mysterious03/mysterious03/main/assets/matrix-banner.svg" width="100%" alt="Suriya Prakash Matrix Banner" />
+  </a>
 
   <!-- Matrix Typing SVG Banner -->
   <a href="https://git.io/typing-svg">
