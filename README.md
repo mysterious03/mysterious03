@@ -1,32 +1,26 @@
 <div align="center">
 
-  <!-- Minimalist Matrix Text Banner (No Background Rain, Pure Matrix Text Effect) -->
-  <a href="https://linkedin.com/in/mysterious03">
-    <img src="assets/matrix-banner.svg" width="100%" alt="Suriya Prakash - Curious Human Being" />
+  <!-- Typing SVG Banner (Original First Version) -->
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=23&pause=1000&color=00F0FF&center=true&vcenter=true&width=720&lines=Hi+%F0%9F%90%8B+I'm+Suriya+Prakash;Curious+human+being+obsessed+with+building+things;Curious+human+being+obsessed+with+exploring+the+unknown;Curious+human+being+obsessed+with+intelligent+systems;Welcome+to+my+world!%E2%9C%A8" alt="Typing SVG" />
   </a>
 
-  <!-- Minimalist Typing Animation -->
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=1200&color=00FF41&center=true&vcenter=true&width=750&lines=Curious+human+being+obsessed+with+building+things;Curious+human+being+obsessed+with+exploring+the+unknown;Curious+human+being+obsessed+with+intelligent+systems;Crafting%2C+tinkering%2C+and+learning+every+single+day." alt="Typing SVG" />
-  </a>
+  <br /><br />
+
+  <!-- Visitor Counter -->
+  <img src="https://komarev.com/ghpvc/?username=mysterious03&color=00f0ff&style=for-the-badge&label=PROFILE+VIEWS" alt="Visitor Counter" />
 
   <br/><br/>
 
-  <!-- Connected Social Media Links -->
-  <a href="https://linkedin.com/in/mysterious03" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-Connect%20%E2%86%92-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-  &nbsp;
+  <!-- Social Badges -->
   <a href="https://github.com/mysterious03" target="_blank">
-    <img src="https://img.shields.io/badge/GitHub-Follow%20%E2%86%92-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+    <img src="https://img.shields.io/badge/GitHub-mysterious03-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
-  &nbsp;
+  <a href="https://linkedin.com/in/mysterious03" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-Suriya%20Prakash-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
   <a href="mailto:contact@suriya.dev" target="_blank">
-    <img src="https://img.shields.io/badge/Email-Get%20in%20Touch%20%E2%86%92-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-  &nbsp;
-  <a href="https://komarev.com/ghpvc/?username=mysterious03&color=00ff41&style=for-the-badge&label=VIEWS">
-    <img src="https://komarev.com/ghpvc/?username=mysterious03&color=00ff41&style=for-the-badge&label=VIEWS" alt="Profile Views" />
+    <img src="https://img.shields.io/badge/Gmail-Email%20Me-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
 
 </div>
