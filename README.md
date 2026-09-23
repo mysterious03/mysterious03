@@ -1,13 +1,18 @@
 <div align="center">
 
-  <!-- Executive Cybernetic Animated Banner with Integrated Media Bar -->
+  <!-- Minimalist Matrix Text Banner (No Background Rain, Pure Matrix Text Effect) -->
   <a href="https://linkedin.com/in/mysterious03">
-    <img src="assets/matrix-banner.svg" width="100%" alt="Suriya Prakash - Executive Cyber Architecture Banner" />
+    <img src="assets/matrix-banner.svg" width="100%" alt="Suriya Prakash - Curious Human Being" />
+  </a>
+
+  <!-- Minimalist Typing Animation -->
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=1200&color=00FF41&center=true&vcenter=true&width=750&lines=Curious+human+being+obsessed+with+building+things;Curious+human+being+obsessed+with+exploring+the+unknown;Curious+human+being+obsessed+with+intelligent+systems;Crafting%2C+tinkering%2C+and+learning+every+single+day." alt="Typing SVG" />
   </a>
 
   <br/><br/>
 
-  <!-- Connected Media Dock / Quick Connect -->
+  <!-- Connected Social Media Links -->
   <a href="https://linkedin.com/in/mysterious03" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-Connect%20%E2%86%92-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
@@ -20,19 +25,8 @@
     <img src="https://img.shields.io/badge/Email-Get%20in%20Touch%20%E2%86%92-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
   &nbsp;
-  <a href="https://github.com/mysterious03/PIXEL" target="_blank">
-    <img src="https://img.shields.io/badge/%E2%9A%A1%20Featured-PIXEL%20ODVPA-00ff41?style=for-the-badge&logo=target&logoColor=black&labelColor=051508" alt="Featured Project" />
-  </a>
-  &nbsp;
-  <a href="https://komarev.com/ghpvc/?username=mysterious03&color=00ff41&style=for-the-badge&label=PROFILE+VIEWS">
-    <img src="https://komarev.com/ghpvc/?username=mysterious03&color=00ff41&style=for-the-badge&label=PROFILE+VIEWS" alt="Profile Views" />
-  </a>
-
-  <br/><br/>
-
-  <!-- High-Impact Typing SVG Banner -->
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=20&pause=1200&color=00FF41&center=true&vcenter=true&width=850&lines=Building+On-Device+Visual+Perception+Agents+(PIXEL+%2F%2F+SIH+%26+ISRO);Architecting+Dynamic+Spatial+Data+Structures+(Matrid);Connecting+Embedded+Sensors%2C+Edge+C%2B%2B+%26+Real-Time+Telemetry;Engineering+Fullstack+AI+Systems%2C+Spatial+Simulations+%26+Modern+UIs" alt="Typing SVG" />
+  <a href="https://komarev.com/ghpvc/?username=mysterious03&color=00ff41&style=for-the-badge&label=VIEWS">
+    <img src="https://komarev.com/ghpvc/?username=mysterious03&color=00ff41&style=for-the-badge&label=VIEWS" alt="Profile Views" />
   </a>
 
 </div>
